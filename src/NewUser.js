@@ -2,7 +2,15 @@ import React from 'react'
 
 const NewUser = () => {
   return (
-    <div>In NewUser</div>
+    <div>
+      <form>
+      <input
+        type="text"
+        name="username"
+        placeholder="enter username..."
+      />
+      </form>
+    </div>
   )
 }
 
