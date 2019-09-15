@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 
 class NewUser extends Component {
+
+  state = {
+    username: '',
+    password: '',
+    bio: '',
+    avatar: ''
+  }
+
   render() {
     return (
       <div>
