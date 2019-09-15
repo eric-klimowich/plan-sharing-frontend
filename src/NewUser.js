@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 class NewUser extends Component {
 
   state = {
-    username: '',
-    password: '',
-    bio: '',
-    avatar: ''
+    username: 'eklimowich',
+    password: 'secret',
+    bio: 'about me',
+    avatar: 'pic.jpg'
   }
 
   handleChangeUserInput = event => {
@@ -23,23 +23,27 @@ class NewUser extends Component {
           <input
             type="text"
             name="username"
+            value={this.state.username}
             placeholder="enter username..."
             onChange={this.handleChangeUserInput}
           />
           <input
             type="text"
             name="password"
+            value={this.state.password}
             placeholder="enter password..."
             onChange={this.handleChangeUserInput}
           />
           <textarea
             name="bio"
+            value={this.state.bio}
             placeholder="enter bio..."
             onChange={this.handleChangeUserInput}
           />
           <input
             type="text"
             name="avatar"
+            value={this.state.avatar}
             placeholder="enter avatar..."
             onChange={this.handleChangeUserInput}
           />
