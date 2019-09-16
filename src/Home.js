@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <Fragment>
       <div>In Home</div>
-      <NewUser />
     </Fragment>
   )
 }
