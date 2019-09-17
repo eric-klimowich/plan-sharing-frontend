@@ -34,6 +34,12 @@ class NewUser extends Component {
     })
       .then(r => r.json())
       .then(console.log)
+      this.setState({
+        username: '',
+        password: '',
+        bio: '',
+        avatar: ''
+      })
   }
 
   render() {
