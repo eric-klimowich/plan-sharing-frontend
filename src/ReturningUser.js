@@ -4,9 +4,7 @@ class ReturningUser extends Component {
 
   state = {
     username: '',
-    password: '',
-    bio: '',
-    avatar: ''
+    password: ''
   }
 
   componentDidMount() {
@@ -25,8 +23,6 @@ class ReturningUser extends Component {
       [event.target.name]: event.target.value
     })
   }
-
-
 
   render() {
     console.log(this.state)
