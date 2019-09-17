@@ -15,6 +15,27 @@ class NewUser extends Component {
     })
   }
 
+  handleSubmitNewUser = (event, newUser) => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          username: newUser.username,
+          password: newUser.password,
+          bio: newUser.bio,
+          avatar: newUser.avatar
+        }
+      })
+    })
+      .then(r => r.json())
+      .then(console.log)
+  }
+
   render() {
     console.log(this.state)
     return (
