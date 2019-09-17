@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
 
-import NewUser from './NewUser'
-
 const Home = () => {
   return (
     <Fragment>

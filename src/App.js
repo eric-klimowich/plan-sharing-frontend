@@ -3,7 +3,6 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import './App.css';
 
-import User from './User'
 import Home from './Home'
 import Profile from './Profile'
 import NewUser from './NewUser'
