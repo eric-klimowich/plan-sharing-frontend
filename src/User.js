@@ -29,11 +29,12 @@ class User extends Component {
         jwt: user.jwt
       }, () => {
         fetch('http://localhost:3000/api/v1/profile', {
-                method: 'GET',
-                headers: {
-                  Authorization: this.state.jwt
-                }
-              })
+          method: 'GET',
+          headers: {
+            Authorization: this.state.jwt
+          }
+        })
+
       })
     })
   }
