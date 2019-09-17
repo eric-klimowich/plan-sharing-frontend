@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 class NewUser extends Component {
 
   state = {
-    username: 'eklimowich',
-    password: 'secret',
-    bio: 'about me',
-    avatar: 'pic.jpg'
+    username: '',
+    password: '',
+    bio: '',
+    avatar: ''
   }
 
   handleChangeUserInput = event => {
@@ -46,6 +46,11 @@ class NewUser extends Component {
             value={this.state.avatar}
             placeholder="enter avatar..."
             onChange={this.handleChangeUserInput}
+          />
+          <input
+            type="submit"
+            name="submit"
+            value="Submit"
           />
         </form>
       </div>
