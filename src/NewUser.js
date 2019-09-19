@@ -46,7 +46,7 @@ class NewUser extends Component {
     console.log(this.state)
     return (
       <div>
-        <form onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
+        <form className="new-user-form" onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
           <input
             type="text"
             name="username"
