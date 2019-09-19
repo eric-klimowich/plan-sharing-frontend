@@ -35,8 +35,16 @@ body {
   font-weight: bold;
 }
 
-.new-user-form {
+.new-user__heading {
+
+}
+
+.new-user__form {
   display:flex;
   align-items: center;
   flex-direction: column;
+}
+
+.new-user__form-item {
+  margin: 0.4rem 0;
 }

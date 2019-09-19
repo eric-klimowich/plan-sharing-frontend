@@ -46,8 +46,10 @@ class NewUser extends Component {
     console.log(this.state)
     return (
       <div>
-        <form className="new-user-form" onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
+        <h1 className="new-user__heading">Please enter to sign up</h1>
+        <form className="new-user__form" onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
           <input
+            className="new-user__form-item"
             type="text"
             name="username"
             value={this.state.username}
@@ -55,6 +57,7 @@ class NewUser extends Component {
             onChange={this.handleChangeUserInput}
           />
           <input
+            className="new-user__form-item"
             type="text"
             name="password"
             value={this.state.password}
@@ -62,12 +65,14 @@ class NewUser extends Component {
             onChange={this.handleChangeUserInput}
           />
           <textarea
+            className="new-user__form-item"
             name="bio"
             value={this.state.bio}
             placeholder="enter bio..."
             onChange={this.handleChangeUserInput}
           />
           <input
+            className="new-user__form-item"
             type="text"
             name="avatar"
             value={this.state.avatar}
