@@ -35,8 +35,15 @@ body {
   font-weight: bold;
 }
 
-.new-user__heading {
+.new-user {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
+.new-user__heading {
+  display: flex;
+  align-items: center;
 }
 
 .new-user__form {

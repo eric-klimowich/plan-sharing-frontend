@@ -45,7 +45,7 @@ class NewUser extends Component {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div className="new-user">
         <h1 className="new-user__heading">Please enter to sign up</h1>
         <form className="new-user__form" onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
           <input
