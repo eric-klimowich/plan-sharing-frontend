@@ -80,6 +80,7 @@ class NewUser extends Component {
             onChange={this.handleChangeUserInput}
           />
           <input
+            clsssName="new-user__form-submit"
             type="submit"
             name="submit"
             value="Submit"
