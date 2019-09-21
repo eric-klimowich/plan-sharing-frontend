@@ -27,7 +27,8 @@ class ReturningUser extends Component {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div className="login">
+        <h1 className="login__heading">Please enter to login</h1>
         <form className="login-form">
           <input
             className="login-form__input"
