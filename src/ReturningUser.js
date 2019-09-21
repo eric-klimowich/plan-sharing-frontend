@@ -28,8 +28,9 @@ class ReturningUser extends Component {
     console.log(this.state)
     return (
       <div>
-        <form>
+        <form className="login-form">
           <input
+            className="login-form__input"
             type="text"
             name="username"
             value={this.state.username}
@@ -37,6 +38,7 @@ class ReturningUser extends Component {
             onChange={this.handleChangeUserInput}
           />
           <input
+            className="login-form__input"
             type="text"
             name="password"
             value={this.state.password}
