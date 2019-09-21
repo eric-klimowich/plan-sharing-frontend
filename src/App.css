@@ -56,6 +56,17 @@ body {
   margin: 0.4rem 0;
 }
 
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login__heading {
+  display: flex;
+  align-items: center;
+}
+
 .login-form {
   display:flex;
   align-items: center;
