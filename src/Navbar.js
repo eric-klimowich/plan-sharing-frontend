@@ -12,11 +12,6 @@ const Navbar = () => {
       <nav className="main-nav">
         <ul className="main-nav__items">
           <li className="main-nav__item">
-            <Link to="/">
-              Home
-            </Link>
-          </li>
-          <li className="main-nav__item">
             <Link to="/login">
               Login
             </Link>
