@@ -7,12 +7,18 @@ class ReturningUser extends Component {
     password: ''
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/profile', {
+  handleLoginUser = (event, returningUser) => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/vi/profile', {
       method: 'GET',
       headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNn0.NgWG9a51H9jd4Rw0Qi5qFiuqF3OF_IODNqbnHzAZ1w8'
-      }
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+          username: returningUser.username,
+          password: returningUser.password
+      })
     })
     .then(r => r.json())
     .then(console.log)
@@ -29,7 +35,7 @@ class ReturningUser extends Component {
     return (
       <div className="login">
         <h1 className="login__heading">Please enter to login</h1>
-        <form className="login-form">
+        <form className="login-form" onSubmit={(event) => this.handleLoginUser(event, this.state)}>
           <input
             className="login-form__input"
             type="text"
