@@ -5,9 +5,10 @@ import './App.css';
 
 import Navbar from './Navbar'
 import Home from './Home'
-import Profile from './Profile'
-import NewUser from './NewUser'
 import ReturningUser from './ReturningUser'
+import NewUser from './NewUser'
+import Profile from './Profile'
+import AddLesson from './AddLesson'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" exact component={ReturningUser} />
         <Route path="/signup" exact component={NewUser} />
         <Route path="/profile" exact component={Profile} />
+        <Route path="/profile/addlesson" exact component={AddLesson} />
       </BrowserRouter>
     </div>
   );
