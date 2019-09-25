@@ -7,6 +7,23 @@ class AddLesson extends Component {
     content: ''
   }
 
+  handleAddLesson = (event, lesson) => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/v1/lessons', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        title: lesson.title,
+        content: lesson.content
+      })
+    })
+    .then(r => r.json())
+    .then(console.log)
+  }
+
   handleChangeLessonInput = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -18,7 +35,7 @@ class AddLesson extends Component {
     return (
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
-        <form className="add-lesson-form">
+        <form className="add-lesson-form" onSubmit={(event) => this.handleAddLesson(event, this.state)}>
           <input
             className="add-lesson-form__input"
             type="text"
