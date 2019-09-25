@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 class AddLesson extends Component {
+
+  state = {
+    title: '',
+    content: ''
+  }
+
   render() {
     return (
       <div className="add-lesson">
