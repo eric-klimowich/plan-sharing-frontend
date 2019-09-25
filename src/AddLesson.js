@@ -23,6 +23,7 @@ class AddLesson extends Component {
             className="add-lesson-form__input"
             type="text"
             name="title"
+            value={this.state.title}
             placeholder="enter title..."
             onChange={this.handleChangeLessonInput}
           />
@@ -30,6 +31,7 @@ class AddLesson extends Component {
             className="add-lesson-form__input"
             type="text"
             name="content"
+            value={this.state.content}
             placeholder="enter content..."
             onChange={this.handleChangeLessonInput}
           />
