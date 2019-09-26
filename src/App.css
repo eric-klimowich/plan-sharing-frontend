@@ -82,3 +82,25 @@ body {
 .login-form__input {
   margin: 0.4rem 0;
 }
+
+
+.add-lesson {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-lesson__heading {
+  display: flex;
+  align-items: center;
+}
+
+.add-lesson-form {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-lesson-form__input {
+  margin: 0.4rem 0;
+}
