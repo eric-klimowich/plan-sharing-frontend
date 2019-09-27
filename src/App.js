@@ -7,6 +7,7 @@ import Navbar from './Navbar'
 import Home from './Home'
 import ReturningUser from './ReturningUser'
 import NewUser from './NewUser'
+import LessonsContainer from './LessonsContainer'
 import Profile from './Profile'
 import AddLesson from './AddLesson'
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/login" exact component={ReturningUser} />
         <Route path="/signup" exact component={NewUser} />
+        <Route path="/lessons" exact component={LessonsContainer} />
         <Route path="/profile" exact component={Profile} />
         <Route path="/profile/addlesson" exact component={AddLesson} />
       </BrowserRouter>
