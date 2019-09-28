@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const LessonsContainer = () => {
-  return (
-    <div>In LessonsContainer</div>
-  )
+class LessonsContainer extends Component {
+  render() {
+    return (
+      <div>In LessonsContainer</div>
+    )
+  }
 }
 
 export default LessonsContainer
