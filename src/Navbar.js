@@ -17,6 +17,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="main-nav__item">
+            <Link to="/lessons">
+              All Lessons
+            </Link>
+          </li>
+          <li className="main-nav__item">
             <Link to="/profile/addlesson">
               Add Lesson
             </Link>
