@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+
+import Lesson from './Lesson'
 
 class LessonsContainer extends Component {
 
@@ -17,7 +19,10 @@ class LessonsContainer extends Component {
 
   render() {
     return (
-      <div>In LessonsContainer</div>
+      <Fragment>
+        <div>In LessonsContainer</div>
+        <Lesson />
+      </Fragment>
     )
   }
 }

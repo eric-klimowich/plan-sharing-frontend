@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Lesson () => {
+const Lesson = () => {
   return (
     <div>In Lesson</div>
   )
