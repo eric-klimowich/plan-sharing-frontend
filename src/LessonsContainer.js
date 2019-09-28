@@ -4,6 +4,10 @@ import Lesson from './Lesson'
 
 class LessonsContainer extends Component {
 
+  state = {
+    lessons: []
+  }
+
   componentDidMount() {
     fetch('http://localhost:3000/api/v1/lessons', {
       method: 'GET',
@@ -14,10 +18,15 @@ class LessonsContainer extends Component {
       }
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(lessons => {
+      this.setState({
+        lessons
+      })
+    })
   }
 
   render() {
+    console.log(this.state)
     return (
       <Fragment>
         <div>In LessonsContainer</div>
