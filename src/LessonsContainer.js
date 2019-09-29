@@ -29,8 +29,11 @@ class LessonsContainer extends Component {
     console.log(this.state)
     return (
       <Fragment>
-        <div>In LessonsContainer</div>
-        <Lesson />
+        {this.state.lessons.map(lesson => {
+          return (
+            <Lesson key={lesson.id} title={lesson.title} content={lesson.content} />
+          )
+        })}
       </Fragment>
     )
   }
