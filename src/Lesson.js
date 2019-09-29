@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const Lesson = () => {
+const Lesson = props => {
   return (
-    <div>In Lesson</div>
+    <Fragment>
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
+    </Fragment>
   )
 }
 
