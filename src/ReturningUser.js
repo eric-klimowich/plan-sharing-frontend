@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { setUser } from './actions'
 
 class ReturningUser extends Component {
 
@@ -23,7 +26,9 @@ class ReturningUser extends Component {
       })
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(user => {
+      this.props.setUser(user)
+    })
   }
 
   handleChangeUserInput = event => {
@@ -34,6 +39,7 @@ class ReturningUser extends Component {
 
   render() {
     console.log(this.state)
+    console.log(this.props)
     return (
       <div className="login">
         <h1 className="login__heading">Please enter to login</h1>
@@ -65,4 +71,16 @@ class ReturningUser extends Component {
   }
 }
 
-export default ReturningUser
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => dispatch(setUser(user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReturningUser)
