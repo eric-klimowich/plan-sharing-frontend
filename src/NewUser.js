@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { setUser } from './actions'
 
 class NewUser extends Component {
 
@@ -33,7 +36,9 @@ class NewUser extends Component {
       })
     })
       .then(r => r.json())
-      .then(console.log)
+      .then(user => {
+        this.props.setUser(user)
+      })
       this.setState({
         username: '',
         password: '',
@@ -90,4 +95,16 @@ class NewUser extends Component {
   }
 }
 
-export default NewUser
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => dispatch(setUser(user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewUser)
