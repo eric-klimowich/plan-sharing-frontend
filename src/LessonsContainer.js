@@ -9,6 +9,18 @@ class LessonsContainer extends Component {
     lessons: []
   }
 
+  renderLessons = () => {
+    return (
+      <Fragment>
+        {this.state.lessons.map(lesson => {
+          return (
+            <Lesson key={lesson.id} title={lesson.title} content={lesson.content} />
+          )
+        })}
+      </Fragment>
+    )
+  }
+
   componentDidMount() {
     if (this.props.user) {
       fetch('http://localhost:3000/api/v1/lessons', {
@@ -33,11 +45,7 @@ class LessonsContainer extends Component {
     console.log(this.props.user)
     return (
       <Fragment>
-        {this.state.lessons.map(lesson => {
-          return (
-            <Lesson key={lesson.id} title={lesson.title} content={lesson.content} />
-          )
-        })}
+        {this.props.user ? this.renderLessons() : <h1>Please Login</h1>}
       </Fragment>
     )
   }
