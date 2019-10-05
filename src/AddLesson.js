@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class AddLesson extends Component {
 
@@ -63,4 +64,10 @@ class AddLesson extends Component {
   }
 }
 
-export default AddLesson
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(AddLesson)
