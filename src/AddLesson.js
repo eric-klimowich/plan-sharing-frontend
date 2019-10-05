@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+const subjects = ["ELA", "Math", "Science", "Social Studies", "Art", "Music", "PE"]
+
 class AddLesson extends Component {
 
   state = {
     title: '',
-    content: ''
+    content: '',
+    subject: ''
   }
 
   handleAddLesson = (event, lesson) => {
@@ -55,6 +58,19 @@ class AddLesson extends Component {
             placeholder="enter content..."
             onChange={this.handleChangeLessonInput}
           />
+          <select
+            className="add-lesson-form__input"
+            name="subject"
+            value={this.state.subject}
+            onChange={this.handleChangeLessonInput}
+          >
+            <option>Subject</option>
+              {subjects.map(subject => {
+                return (
+                  <option key={subject} value={subject} >{subject}</option>
+                )})
+              }
+          </select>
           <input
             type="submit"
             name="submit"
