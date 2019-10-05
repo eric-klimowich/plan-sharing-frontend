@@ -14,11 +14,13 @@ class AddLesson extends Component {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json'
+        Accept: 'application/json',
+        Authorization: `Bearer ${this.props.user.jwt}`
       },
       body: JSON.stringify({
         title: lesson.title,
-        content: lesson.content
+        content: lesson.content,
+        user_id: this.props.user.user.id
       })
     })
     .then(r => r.json())
@@ -32,7 +34,7 @@ class AddLesson extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
