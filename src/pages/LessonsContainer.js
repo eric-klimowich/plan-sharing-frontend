@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
-import Lesson from './Lesson'
+import Lesson from '../Lesson'
 
 class LessonsContainer extends Component {
 
@@ -41,8 +41,8 @@ class LessonsContainer extends Component {
   }
 
   render() {
-    console.log(this.state)
-    console.log(this.props.user)
+    // console.log(this.state)
+    // console.log(this.props.user)
     return (
       <Fragment>
         {this.props.user ? this.renderLessons() : <h1>Please Login</h1>}

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { setUser } from './actions'
+import { setUser } from '../actions'
 
 class ReturningUser extends Component {
 

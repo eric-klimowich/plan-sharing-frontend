@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { setUser } from './actions'
+import { setUser } from '../actions'
 
 class NewUser extends Component {
 
@@ -48,7 +48,7 @@ class NewUser extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className="new-user">
         <h1 className="new-user__heading">Please enter to sign up</h1>

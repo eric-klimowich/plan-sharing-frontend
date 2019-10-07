@@ -4,12 +4,12 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
 
 import Navbar from './Navbar'
-import Home from './Home'
-import ReturningUser from './ReturningUser'
-import NewUser from './NewUser'
-import LessonsContainer from './LessonsContainer'
-import Profile from './Profile'
-import AddLesson from './AddLesson'
+import Home from './pages/Home'
+import ReturningUser from './pages/ReturningUser'
+import NewUser from './pages/NewUser'
+import LessonsContainer from './pages/LessonsContainer'
+import Profile from './pages/Profile'
+import AddLesson from './pages/AddLesson'
 
 class App extends Component {
   render() {
