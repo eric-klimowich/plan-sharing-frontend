@@ -3,6 +3,20 @@ import { connect } from 'react-redux'
 
 class Profile extends Component {
 
+  renderProfile = () => {
+    return (
+      <Fragment>
+        {this.props.user.user ? this.renderUserInfo() : this.renderErrorMessage()}
+      </Fragment>
+    )
+  }
+
+  renderErrorMessage = () => {
+    return (
+      <h1>{this.props.user.message}</h1>
+    )
+  }
+
   renderUserInfo = () => {
     return (
       <Fragment>
@@ -16,7 +30,7 @@ class Profile extends Component {
     console.log(this.props)
     return (
       <Fragment>
-        {this.props.user ? this.renderUserInfo() : <h1>Please Login</h1>}
+        {this.props.user ? this.renderProfile() : <h1>Please Login</h1>}
       </Fragment>
     )
   }
