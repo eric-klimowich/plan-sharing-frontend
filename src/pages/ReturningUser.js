@@ -28,8 +28,9 @@ class ReturningUser extends Component {
     })
     .then(r => r.json())
     .then(user => {
-      console.log(user)
-      this.props.setUser(user)
+      console.log(user.user)
+      console.log(user.jwt)
+      this.props.setUser(user.user)
     })
     this.setState({
       username: '',

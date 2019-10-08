@@ -6,7 +6,7 @@ class Profile extends Component {
   renderProfile = () => {
     return (
       <Fragment>
-        {this.props.user.user ? this.renderUserInfo() : this.renderErrorMessage()}
+        {this.props.user ? this.renderUserInfo() : this.renderErrorMessage()}
       </Fragment>
     )
   }
@@ -20,8 +20,8 @@ class Profile extends Component {
   renderUserInfo = () => {
     return (
       <Fragment>
-        <h1>{this.props.user.user.username}</h1>
-        <p>{this.props.user.user.bio}</p>
+        <h1>{this.props.user.username}</h1>
+        <p>{this.props.user.bio}</p>
       </Fragment>
     )
   }
