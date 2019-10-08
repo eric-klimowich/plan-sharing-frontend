@@ -3,6 +3,7 @@ import { Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { setUser } from '../actions'
+import { setJwt } from '../actions'
 
 class ReturningUser extends Component {
 
@@ -28,9 +29,8 @@ class ReturningUser extends Component {
     })
     .then(r => r.json())
     .then(user => {
-      console.log(user.user)
-      console.log(user.jwt)
       this.props.setUser(user.user)
+      this.props.setJwt(user.jwt)
     })
     this.setState({
       username: '',
@@ -45,8 +45,6 @@ class ReturningUser extends Component {
   }
 
   render() {
-    // console.log(this.state)
-    console.log(this.props)
     if (!this.props.user) {
       return (
         <div className="login">
@@ -91,7 +89,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: (user) => dispatch(setUser(user))
+    setUser: (user) => dispatch(setUser(user)),
+    setJwt: (jwt) => dispatch(setJwt(jwt))
   }
 }
 
