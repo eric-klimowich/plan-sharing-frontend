@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { setUser } from '../actions'
+import { setJwt } from '../actions'
 
 class NewUser extends Component {
 
@@ -37,7 +38,8 @@ class NewUser extends Component {
     })
       .then(r => r.json())
       .then(user => {
-        this.props.setUser(user)
+        this.props.setUser(user.user)
+        this.props.setJwt(user.jwt)
       })
       this.setState({
         username: '',
@@ -49,6 +51,7 @@ class NewUser extends Component {
 
   render() {
     // console.log(this.state)
+    console.log(this.props)
     return (
       <div className="new-user">
         <h1 className="new-user__heading">Please enter to sign up</h1>
@@ -97,13 +100,15 @@ class NewUser extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    jwt: state.jwt
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: (user) => dispatch(setUser(user))
+    setUser: (user) => dispatch(setUser(user)),
+    setJwt: (jwt) => dispatch(setJwt(jwt))
   }
 }
 
