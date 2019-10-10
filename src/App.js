@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import './App.css';
 
@@ -10,6 +11,8 @@ import NewUser from './pages/NewUser'
 import LessonsContainer from './pages/LessonsContainer'
 import Profile from './pages/Profile'
 import AddLesson from './pages/AddLesson'
+
+import { setUser } from './actions'
 
 class App extends Component {
 
@@ -43,4 +46,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => dispatch(setUser(user)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);
