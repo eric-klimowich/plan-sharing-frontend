@@ -12,6 +12,10 @@ class ReturningUser extends Component {
     password: ''
   }
 
+  componentDidMount() {
+    console.log(localStorage.getItem('token'))
+  }
+
   handleLoginUser = (event, returningUser) => {
     event.preventDefault()
     fetch('http://localhost:3000/api/v1/login', {
@@ -31,6 +35,7 @@ class ReturningUser extends Component {
     .then(user => {
       this.props.setUser(user.user)
       this.props.setJwt(user.jwt)
+      localStorage.setItem('token', user.jwt)
     })
     this.setState({
       username: '',
