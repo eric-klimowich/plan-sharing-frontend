@@ -36,6 +36,7 @@ class ReturningUser extends Component {
       this.props.setUser(user.user)
       this.props.setJwt(user.jwt)
       localStorage.setItem('token', user.jwt)
+      this.props.history.push('/profile')
     })
     this.setState({
       username: '',
@@ -50,39 +51,34 @@ class ReturningUser extends Component {
   }
 
   render() {
-    if (!this.props.user) {
-      return (
-        <div className="login">
-          <h1 className="login__heading">Please enter to login</h1>
-          <form className="login-form" onSubmit={(event) => this.handleLoginUser(event, this.state)}>
-            <input
-              className="login-form__input"
-              type="text"
-              name="username"
-              value={this.state.username}
-              placeholder="enter username..."
-              onChange={this.handleChangeUserInput}
-            />
-            <input
-              className="login-form__input"
-              type="text"
-              name="password"
-              value={this.state.password}
-              placeholder="enter password..."
-              onChange={this.handleChangeUserInput}
-            />
-            <input
-              type="submit"
-              name="submit"
-              value="Submit"
-            />
-          </form>
-        </div>
-      )
-    } else {
-      return <Redirect to="/profile" />
-    }
-
+    return (
+      <div className="login">
+        <h1 className="login__heading">Please enter to login</h1>
+        <form className="login-form" onSubmit={(event) => this.handleLoginUser(event, this.state)}>
+          <input
+            className="login-form__input"
+            type="text"
+            name="username"
+            value={this.state.username}
+            placeholder="enter username..."
+            onChange={this.handleChangeUserInput}
+          />
+          <input
+            className="login-form__input"
+            type="text"
+            name="password"
+            value={this.state.password}
+            placeholder="enter password..."
+            onChange={this.handleChangeUserInput}
+          />
+          <input
+            type="submit"
+            name="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    )
   }
 }
 
