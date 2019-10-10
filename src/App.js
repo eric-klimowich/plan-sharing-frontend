@@ -12,6 +12,20 @@ import Profile from './pages/Profile'
 import AddLesson from './pages/AddLesson'
 
 class App extends Component {
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/logged_in_user', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(r => r.json())
+    .then(console.log)
+  }
+
   render() {
     return (
       <div className="App">
