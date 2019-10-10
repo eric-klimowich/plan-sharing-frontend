@@ -22,31 +22,27 @@ class LessonsContainer extends Component {
   }
 
   componentDidMount() {
-    if (this.props.user) {
-      fetch('http://localhost:3000/api/v1/lessons', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            Authorization: `Bearer ${this.props.user.jwt}`
-        }
+    fetch('http://localhost:3000/api/v1/lessons', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+      }
+    })
+    .then(r => r.json())
+    .then(lessons => {
+      console.log(lessons)
+      this.setState({
+        lessons
       })
-      .then(r => r.json())
-      .then(lessons => {
-        this.setState({
-          lessons
-        })
-      })
-    }
+    })
   }
 
   render() {
     // console.log(this.state)
     // console.log(this.props.user)
     return (
-      <Fragment>
-        {this.props.user ? this.renderLessons() : <h1>Please Login</h1>}
-      </Fragment>
+      this.renderLessons()
     )
   }
 }

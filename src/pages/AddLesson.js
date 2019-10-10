@@ -18,12 +18,12 @@ class AddLesson extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        Authorization: `Bearer ${this.props.user.jwt}`
+        // Authorization: `Bearer ${this.props.user.jwt}`
       },
       body: JSON.stringify({
         title: lesson.title,
         content: lesson.content,
-        user_id: this.props.user.user.id
+        user_id: this.props.user.id
       })
     })
     .then(r => r.json())
@@ -37,7 +37,7 @@ class AddLesson extends Component {
   }
 
   render() {
-    // console.log(this.state)
+    console.log(this.props)
     return (
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
