@@ -26,7 +26,10 @@ class App extends Component {
       }
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(user => {
+      console.log(user)
+      this.props.setUser(user)
+    })
   }
 
   render() {
