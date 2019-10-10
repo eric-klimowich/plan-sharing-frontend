@@ -18,7 +18,7 @@ class AddLesson extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        // Authorization: `Bearer ${this.props.user.jwt}`
+        Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify({
         title: lesson.title,
