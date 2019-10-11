@@ -13,6 +13,7 @@ import Profile from './pages/Profile'
 import AddLesson from './pages/AddLesson'
 
 import { setUser } from './actions'
+import { BadTokenError } from './error'
 
 class App extends Component {
 
@@ -28,6 +29,8 @@ class App extends Component {
     .then(r => {
       if (r.ok) {
         return r.json()
+      } else if (r.status === 401) {
+        throw new BadTokenError("Bad token.")
       } else {
         throw new Error("Unhandled error.")
       }
@@ -35,6 +38,9 @@ class App extends Component {
     .then(user => {
       console.log(user)
       this.props.setUser(user)
+    })
+    .catch(err => {
+      console.warn(err)
     })
   }
 
