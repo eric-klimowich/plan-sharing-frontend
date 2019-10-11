@@ -12,7 +12,7 @@ class ReturningUser extends Component {
   }
 
   componentDidMount() {
-    console.log(localStorage.getItem('token'))
+    // console.log(localStorage.getItem('token'))
   }
 
   handleLoginUser = (event, returningUser) => {

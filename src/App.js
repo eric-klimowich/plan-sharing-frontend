@@ -41,6 +41,7 @@ class App extends Component {
     })
     .catch(err => {
       console.warn(err)
+      localStorage.removeItem('token')
     })
   }
 
@@ -61,10 +62,16 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     setUser: (user) => dispatch(setUser(user)),
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
