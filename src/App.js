@@ -25,7 +25,13 @@ class App extends Component {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-    .then(r => r.json())
+    .then(r => {
+      if (r.ok) {
+        return r.json()
+      } else {
+        throw new Error("Unhandled error.")
+      }
+    })
     .then(user => {
       console.log(user)
       this.props.setUser(user)
