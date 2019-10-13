@@ -23,7 +23,7 @@ class AddLesson extends Component {
       body: JSON.stringify({
         title: lesson.title,
         content: lesson.content,
-        user_id: this.props.user.id
+        subject: lesson.subject
       })
     })
     .then(r => r.json())
