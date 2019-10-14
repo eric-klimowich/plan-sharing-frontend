@@ -11,10 +11,6 @@ class ReturningUser extends Component {
     password: ''
   }
 
-  componentDidMount() {
-    // console.log(localStorage.getItem('token'))
-  }
-
   handleLoginUser = (event, returningUser) => {
     event.preventDefault()
     fetch('http://localhost:3000/api/v1/login', {
