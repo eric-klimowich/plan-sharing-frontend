@@ -45,7 +45,7 @@ class ReturningUser extends Component {
     })
   }
 
-  render() {
+  renderLoginForm = () => {
     return (
       <div className="login">
         <h1 className="login__heading">Please enter to login</h1>
@@ -73,6 +73,12 @@ class ReturningUser extends Component {
           />
         </form>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      this.renderLoginForm()
     )
   }
 }
