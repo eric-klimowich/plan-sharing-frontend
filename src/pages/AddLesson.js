@@ -41,8 +41,7 @@ class AddLesson extends Component {
     })
   }
 
-  render() {
-    // console.log(this.state)
+  renderAddLessonForm = () => {
     return (
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
@@ -96,6 +95,13 @@ class AddLesson extends Component {
           />
         </form>
       </div>
+    )
+  }
+
+  render() {
+    // console.log(this.state)
+    return (
+      this.renderAddLessonForm()
     )
   }
 }
