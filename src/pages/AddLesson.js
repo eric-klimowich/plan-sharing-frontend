@@ -26,6 +26,7 @@ class AddLesson extends Component {
         lesson: {
           title: lesson.title,
           content: lesson.content,
+          grade_name: lesson.grade,
           subject_name: lesson.subject
         }
       })
