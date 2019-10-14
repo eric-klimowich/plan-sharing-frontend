@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+const grades = ["K", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"]
 const subjects = ["ELA", "Math", "Science", "Social Studies", "Art", "Music", "PE"]
 
 class AddLesson extends Component {
@@ -8,6 +9,7 @@ class AddLesson extends Component {
   state = {
     title: '',
     content: '',
+    grade: '',
     subject: ''
   }
 
@@ -39,7 +41,7 @@ class AddLesson extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
@@ -60,6 +62,19 @@ class AddLesson extends Component {
             placeholder="enter content..."
             onChange={this.handleChangeLessonInput}
           />
+          <select
+            className="add-lesson-form__input"
+            name="grade"
+            value={this.state.grade}
+            onChange={this.handleChangeLessonInput}
+          >
+            <option>Grade</option>
+              {grades.map(grade => {
+                return (
+                  <option key={grade} value={grade} >{grade}</option>
+                )})
+              }
+          </select>
           <select
             className="add-lesson-form__input"
             name="subject"
