@@ -24,8 +24,7 @@ class AddLesson extends Component {
         lesson: {
           title: lesson.title,
           content: lesson.content,
-          subject_name: lesson.subject,
-          user_id: this.props.user.id
+          subject_name: lesson.subject
         }
       })
     })
