@@ -21,9 +21,11 @@ class AddLesson extends Component {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify({
-        title: lesson.title,
-        content: lesson.content,
-        subject: lesson.subject
+        lesson: {
+          title: lesson.title,
+          content: lesson.content,
+          subject_name: lesson.subject
+        }
       })
     })
     .then(r => r.json())
@@ -37,7 +39,7 @@ class AddLesson extends Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.state)
     return (
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
