@@ -1,5 +1,36 @@
 import React from 'react'
 
+export const renderLoginForm = (handleLoginUser, state, handleChangeUserInput) => {
+  return (
+    <div className="login">
+      <h1 className="login__heading">Please enter to login</h1>
+      <form className="login-form" onSubmit={(event) => handleLoginUser(event, state)}>
+        <input
+          className="login-form__input"
+          type="text"
+          name="username"
+          value={state.username}
+          placeholder="enter username..."
+          onChange={handleChangeUserInput}
+        />
+        <input
+          className="login-form__input"
+          type="text"
+          name="password"
+          value={state.password}
+          placeholder="enter password..."
+          onChange={handleChangeUserInput}
+        />
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  )
+}
+
 export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonInput, grades, subjects) => {
   return (
     <div className="add-lesson">

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { setUser } from '../actions'
+import { renderLoginForm } from '../forms'
 import { setJwt } from '../actions'
 
 class ReturningUser extends Component {
@@ -45,40 +46,9 @@ class ReturningUser extends Component {
     })
   }
 
-  renderLoginForm = () => {
-    return (
-      <div className="login">
-        <h1 className="login__heading">Please enter to login</h1>
-        <form className="login-form" onSubmit={(event) => this.handleLoginUser(event, this.state)}>
-          <input
-            className="login-form__input"
-            type="text"
-            name="username"
-            value={this.state.username}
-            placeholder="enter username..."
-            onChange={this.handleChangeUserInput}
-          />
-          <input
-            className="login-form__input"
-            type="text"
-            name="password"
-            value={this.state.password}
-            placeholder="enter password..."
-            onChange={this.handleChangeUserInput}
-          />
-          <input
-            type="submit"
-            name="submit"
-            value="Submit"
-          />
-        </form>
-      </div>
-    )
-  }
-
   render() {
     return (
-      this.renderLoginForm()
+      renderLoginForm(this.handleLoginUser, this.state, this.handleChangeUserInput)
     )
   }
 }
