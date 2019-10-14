@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import { renderAddLessonForm } from '../forms'
+
 const grades = ["K", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"]
 const subjects = ["ELA", "Math", "Science", "Social Studies", "Art", "Music", "PE"]
 
@@ -41,67 +43,10 @@ class AddLesson extends Component {
     })
   }
 
-  renderAddLessonForm = () => {
-    return (
-      <div className="add-lesson">
-        <h1 className="add-lesson__heading">Enter Lesson Info</h1>
-        <form className="add-lesson-form" onSubmit={(event) => this.handleAddLesson(event, this.state)}>
-          <input
-            className="add-lesson-form__input"
-            type="text"
-            name="title"
-            value={this.state.title}
-            placeholder="enter title..."
-            onChange={this.handleChangeLessonInput}
-          />
-          <input
-            className="add-lesson-form__input"
-            type="text"
-            name="content"
-            value={this.state.content}
-            placeholder="enter content..."
-            onChange={this.handleChangeLessonInput}
-          />
-          <select
-            className="add-lesson-form__input"
-            name="grade"
-            value={this.state.grade}
-            onChange={this.handleChangeLessonInput}
-          >
-            <option>Grade</option>
-              {grades.map(grade => {
-                return (
-                  <option key={grade} value={grade} >{grade}</option>
-                )})
-              }
-          </select>
-          <select
-            className="add-lesson-form__input"
-            name="subject"
-            value={this.state.subject}
-            onChange={this.handleChangeLessonInput}
-          >
-            <option>Subject</option>
-              {subjects.map(subject => {
-                return (
-                  <option key={subject} value={subject} >{subject}</option>
-                )})
-              }
-          </select>
-          <input
-            type="submit"
-            name="submit"
-            value="Submit"
-          />
-        </form>
-      </div>
-    )
-  }
-
   render() {
     // console.log(this.state)
     return (
-      this.renderAddLessonForm()
+      renderAddLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
   }
 }
