@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { setUser } from '../actions'
-import { setJwt } from '../actions'
 
 class NewUser extends Component {
 
@@ -39,7 +38,6 @@ class NewUser extends Component {
       .then(r => r.json())
       .then(user => {
         this.props.setUser(user.user)
-        this.props.setJwt(user.jwt)
         localStorage.setItem('token', user.jwt)
         this.props.history.push('/profile')
       })
@@ -100,15 +98,13 @@ class NewUser extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
-    jwt: state.jwt
+    user: state.user
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: (user) => dispatch(setUser(user)),
-    setJwt: (jwt) => dispatch(setJwt(jwt))
+    setUser: (user) => dispatch(setUser(user))
   }
 }
 
