@@ -4,10 +4,3 @@ export const setUser = user => {
     payload: user
   }
 }
-
-export const setJwt = jwt => {
-  return {
-    type: 'SET_JWT',
-    payload: jwt
-  }
-}
