@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import { setUser } from '../actions'
 import { renderLoginForm } from '../forms'
-import { setJwt } from '../actions'
 
 class ReturningUser extends Component {
 
@@ -30,7 +29,6 @@ class ReturningUser extends Component {
     .then(r => r.json())
     .then(user => {
       this.props.setUser(user.user)
-      this.props.setJwt(user.jwt)
       localStorage.setItem('token', user.jwt)
       this.props.history.push('/profile')
     })
@@ -61,8 +59,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: (user) => dispatch(setUser(user)),
-    setJwt: (jwt) => dispatch(setJwt(jwt))
+    setUser: (user) => dispatch(setUser(user))
   }
 }
 
