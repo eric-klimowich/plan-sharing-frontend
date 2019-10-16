@@ -31,41 +31,41 @@ export const renderLoginForm = (handleLoginUser, state, handleChangeUserInput) =
   )
 }
 
-export const renderNewUserForm = () => {
+export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserInput) => {
   return (
     <div className="new-user">
       <h1 className="new-user__heading">Please enter to sign up</h1>
-      <form className="new-user__form" onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
+      <form className="new-user__form" onSubmit={(event) => handleSubmitNewUser(event, state)}>
         <input
           className="new-user__form-input"
           type="text"
           name="username"
-          value={this.state.username}
+          value={state.username}
           placeholder="enter username..."
-          onChange={this.handleChangeUserInput}
+          onChange={handleChangeUserInput}
         />
         <input
           className="new-user__form-input"
           type="text"
           name="password"
-          value={this.state.password}
+          value={state.password}
           placeholder="enter password..."
-          onChange={this.handleChangeUserInput}
+          onChange={handleChangeUserInput}
         />
         <textarea
           className="new-user__form-input"
           name="bio"
-          value={this.state.bio}
+          value={state.bio}
           placeholder="enter bio..."
-          onChange={this.handleChangeUserInput}
+          onChange={handleChangeUserInput}
         />
         <input
           className="new-user__form-input"
           type="text"
           name="avatar"
-          value={this.state.avatar}
+          value={state.avatar}
           placeholder="enter avatar..."
-          onChange={this.handleChangeUserInput}
+          onChange={handleChangeUserInput}
         />
         <input
           type="submit"

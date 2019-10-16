@@ -52,7 +52,7 @@ class NewUser extends Component {
 
   render() {
     return (
-      renderNewUserForm()
+      renderNewUserForm(this.handleSubmitNewUser, this.state, this.handleChangeUserInput)
     )
   }
 }
