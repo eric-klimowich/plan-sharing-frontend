@@ -1,3 +1,5 @@
+import { BadTokenError } from './error'
+
 export default class Adapter {
   static headers() {
     return {
@@ -12,6 +14,26 @@ export default class Adapter {
 
   static deleteToken() {
     localStorage.removeItem('token')
+  }
+
+  static getLoggedInUserToken() {
+    return fetch('http://localhost:3000/api/v1/logged_in_user', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(r => {
+      if (r.ok) {
+        return r.json()
+      } else if (r.status === 401) {
+        throw new BadTokenError("Bad token.")
+      } else {
+        throw new Error("Unhandled error.")
+      }
+    })
   }
 
   static getUserLogin(returningUser) {

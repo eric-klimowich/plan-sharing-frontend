@@ -13,38 +13,22 @@ import NewUser from './pages/NewUser'
 import LessonsContainer from './pages/LessonsContainer'
 import Profile from './pages/Profile'
 import AddLesson from './pages/AddLesson'
+import Adapter from './Adapter'
 
 import { setUser } from './actions'
-import { BadTokenError } from './error'
 
 class App extends Component {
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/logged_in_user', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-    .then(r => {
-      if (r.ok) {
-        return r.json()
-      } else if (r.status === 401) {
-        throw new BadTokenError("Bad token.")
-      } else {
-        throw new Error("Unhandled error.")
-      }
-    })
-    .then(user => {
-      console.log(user)
-      this.props.setUser(user)
-    })
-    .catch(err => {
-      console.warn(err)
-      localStorage.removeItem('token')
-    })
+    Adapter.getLoggedInUserToken()
+      .then(user => {
+        console.log(user)
+        this.props.setUser(user)
+      })
+      .catch(err => {
+        console.warn(err)
+        localStorage.removeItem('token')
+      })
   }
 
   render(props) {
