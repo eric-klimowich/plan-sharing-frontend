@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import Lesson from '../elements/Lesson'
+import Adapter from '../Adapter'
 
 class LessonsContainer extends Component {
 
@@ -22,25 +23,15 @@ class LessonsContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/lessons', {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-      }
-    })
-    .then(r => r.json())
-    .then(lessons => {
-      console.log(lessons)
-      this.setState({
-        lessons
+    Adapter.getLessons()
+      .then(lessons => {
+        this.setState({
+          lessons
+        })
       })
-    })
   }
 
   render() {
-    // console.log(this.state)
-    // console.log(this.props.user)
     return (
       this.renderLessons()
     )
