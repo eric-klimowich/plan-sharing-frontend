@@ -49,7 +49,7 @@ class NewUser extends Component {
       })
   }
 
-  render() {
+  renderNewUserForm = () => {
     return (
       <div className="new-user">
         <h1 className="new-user__heading">Please enter to sign up</h1>
@@ -92,6 +92,12 @@ class NewUser extends Component {
           />
         </form>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      this.renderNewUserForm()
     )
   }
 }
