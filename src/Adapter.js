@@ -1,11 +1,19 @@
 export default class Adapter {
+  static headers() {
+    return {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  }
+
+  static getToken() {
+    return localStorage.getItem('token')
+  }
+
   static getUserLogin(returningUser) {
     return fetch('http://localhost:3000/api/v1/login', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
+      headers: this.headers(),
       body: JSON.stringify({
         user: {
           username: returningUser.username,
@@ -19,10 +27,7 @@ export default class Adapter {
   static postUserSignup(newUser) {
     return fetch('http://localhost:3000/api/v1/users', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
+      headers: this.headers(),
       body: JSON.stringify({
         user: {
           username: newUser.username,
@@ -38,10 +43,7 @@ export default class Adapter {
   static getLessons() {
     return fetch('http://localhost:3000/api/v1/lessons', {
       method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-      }
+      headers: this.headers()
     })
     .then(r => r.json())
   }
@@ -52,7 +54,7 @@ export default class Adapter {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
+        Authorization: `Bearer ${this.getToken()}`
       },
       body: JSON.stringify({
         lesson: {
