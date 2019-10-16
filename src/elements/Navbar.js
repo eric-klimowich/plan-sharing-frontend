@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom'
 import Adapter from '../Adapter'
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   handleLogout = () => {
-    localStorage.removeItem('token')
+    Adapter.deleteToken()
   }
 
   render() {
+    console.log(this.props)
     return (
       <header className="main-header">
         <div className="main-header__title">

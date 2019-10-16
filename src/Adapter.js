@@ -10,6 +10,10 @@ export default class Adapter {
     return localStorage.getItem('token')
   }
 
+  static deleteToken() {
+    localStorage.removeItem('token')
+  }
+
   static getUserLogin(returningUser) {
     return fetch('http://localhost:3000/api/v1/login', {
       method: 'POST',
