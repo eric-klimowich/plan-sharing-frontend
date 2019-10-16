@@ -46,4 +46,24 @@ export default class Adapter {
     .then(r => r.json())
   }
 
+  static postNewLesson(lesson) {
+    return fetch('http://localhost:3000/api/v1/lessons', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({
+        lesson: {
+          title: lesson.title,
+          content: lesson.content,
+          grade_name: lesson.grade,
+          subject_name: lesson.subject
+        }
+      })
+    })
+    .then(r => r.json())
+  }
+
 }
