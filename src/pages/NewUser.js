@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import Adapter from '../Adapter'
+
 import { setUser } from '../actions'
 import { renderNewUserForm } from '../forms'
 
@@ -21,22 +23,7 @@ class NewUser extends Component {
 
   handleSubmitNewUser = (event, newUser) => {
     event.preventDefault()
-    fetch('http://localhost:3000/api/v1/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify({
-        user: {
-          username: newUser.username,
-          password: newUser.password,
-          bio: newUser.bio,
-          avatar: newUser.avatar
-        }
-      })
-    })
-      .then(r => r.json())
+    Adapter.postUserSignup(newUser)
       .then(user => {
         this.props.setUser(user.user)
         localStorage.setItem('token', user.jwt)

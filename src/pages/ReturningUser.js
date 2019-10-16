@@ -15,7 +15,7 @@ class ReturningUser extends Component {
 
   handleLoginUser = (event, returningUser) => {
     event.preventDefault()
-    Adapter.userLogin(returningUser)
+    Adapter.getUserLogin(returningUser)
     .then(user => {
       this.props.setUser(user.user)
       localStorage.setItem('token', user.jwt)
