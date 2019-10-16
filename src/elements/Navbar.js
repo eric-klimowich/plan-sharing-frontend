@@ -1,13 +1,17 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import Adapter from '../Adapter'
+
+import { setUser } from '../actions'
 
 class Navbar extends Component {
 
   handleLogout = () => {
     Adapter.deleteToken()
     this.props.history.push("/login")
+    this.props.setUser(null)
   }
 
   render() {
@@ -73,4 +77,16 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: (user) => dispatch(setUser(user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
