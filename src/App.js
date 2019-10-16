@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import history from './history'
+
 import './App.css';
 
 import Navbar from './elements/Navbar'
@@ -45,11 +47,11 @@ class App extends Component {
     })
   }
 
-  render() {
+  render(props) {
     return (
       <div className="App">
-        <BrowserRouter>
-          <Navbar />
+        <BrowserRouter history={history}>
+          <Navbar history={history} {...props}/>
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={ReturningUser} />
           <Route path="/signup" exact component={NewUser} />

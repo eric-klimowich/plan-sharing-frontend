@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom'
 import Adapter from '../Adapter'
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   handleLogout = () => {
     Adapter.deleteToken()
+    this.props.history.push("/login")
   }
 
   render() {
