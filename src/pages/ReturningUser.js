@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import Adapter from '../Adapter'
+
 import { setUser } from '../actions'
 import { renderLoginForm } from '../forms'
 
@@ -13,19 +15,7 @@ class ReturningUser extends Component {
 
   handleLoginUser = (event, returningUser) => {
     event.preventDefault()
-    fetch('http://localhost:3000/api/v1/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify({
-        user: {
-          username: returningUser.username,
-          password: returningUser.password
-        }
-      })
-    })
+    Adapter.userLogin(returningUser)
     .then(r => r.json())
     .then(user => {
       this.props.setUser(user.user)
