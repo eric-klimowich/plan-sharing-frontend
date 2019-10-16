@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { setUser } from '../actions'
+import { renderNewUserForm } from '../forms'
 
 class NewUser extends Component {
 
@@ -49,55 +50,9 @@ class NewUser extends Component {
       })
   }
 
-  renderNewUserForm = () => {
-    return (
-      <div className="new-user">
-        <h1 className="new-user__heading">Please enter to sign up</h1>
-        <form className="new-user__form" onSubmit={(event) => this.handleSubmitNewUser(event, this.state)}>
-          <input
-            className="new-user__form-input"
-            type="text"
-            name="username"
-            value={this.state.username}
-            placeholder="enter username..."
-            onChange={this.handleChangeUserInput}
-          />
-          <input
-            className="new-user__form-input"
-            type="text"
-            name="password"
-            value={this.state.password}
-            placeholder="enter password..."
-            onChange={this.handleChangeUserInput}
-          />
-          <textarea
-            className="new-user__form-input"
-            name="bio"
-            value={this.state.bio}
-            placeholder="enter bio..."
-            onChange={this.handleChangeUserInput}
-          />
-          <input
-            className="new-user__form-input"
-            type="text"
-            name="avatar"
-            value={this.state.avatar}
-            placeholder="enter avatar..."
-            onChange={this.handleChangeUserInput}
-          />
-          <input
-            type="submit"
-            name="submit"
-            value="Submit"
-          />
-        </form>
-      </div>
-    )
-  }
-
   render() {
     return (
-      this.renderNewUserForm()
+      renderNewUserForm()
     )
   }
 }
