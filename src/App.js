@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -35,13 +35,24 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter history={history}>
-          <Navbar history={history} {...props}/>
-          <Route path="/" exact component={Home} />
-          <Route path="/login" exact component={ReturningUser} />
-          <Route path="/signup" exact component={NewUser} />
-          <Route path="/lessons" exact component={LessonsContainer} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/profile/addlesson" exact component={AddLesson} />
+          {
+            !!Adapter.getToken() ?
+              <Fragment>
+                <Navbar history={history} {...props}/>
+                <Route path="/" exact component={Home} />
+                <Route path="/lessons" exact component={LessonsContainer} />
+                <Route path="/profile" exact component={Profile} />
+                <Route path="/profile/addlesson" exact component={AddLesson} />
+              </Fragment>
+            :
+              <Fragment>
+                <Navbar history={history} {...props}/>
+                <Route path="/" exact component={Home} />
+                <Route path="/login" exact component={ReturningUser} />
+                <Route path="/signup" exact component={NewUser} />
+                <Route path="/lessons" exact component={LessonsContainer} />
+              </Fragment>
+          }
         </BrowserRouter>
       </div>
     );
