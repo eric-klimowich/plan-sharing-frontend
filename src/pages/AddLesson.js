@@ -19,7 +19,12 @@ class AddLesson extends Component {
   handleAddLesson = (event, lesson) => {
     event.preventDefault()
     Adapter.postNewLesson(lesson)
-      .then(console.log)
+    this.setState({
+      title: '',
+      content: '',
+      grade: '',
+      subject: ''
+    })
   }
 
   handleChangeLessonInput = event => {
