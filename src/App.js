@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import history from './history'
@@ -34,7 +34,7 @@ class App extends Component {
   render(props) {
     return (
       <div className="App">
-        <BrowserRouter history={history}>
+        <Router history={history}>
           {
             !!Adapter.getToken() ?
               <Fragment>
@@ -53,7 +53,7 @@ class App extends Component {
                 <Route path="/lessons" exact component={LessonsContainer} />
               </Fragment>
           }
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
