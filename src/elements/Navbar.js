@@ -43,10 +43,12 @@ class Navbar extends Component {
                       Add Lesson
                     </Link>
                   </li>
+                  <li>
+                    <button className="main-nav__item logout-btn" onClick={this.handleLogout}>
+                    Logout
+                    </button>
+                  </li>
                 </ul>
-                <button className="main-nav__item" onClick={this.handleLogout}>
-                  Logout
-                </button>
               </nav>
             </Fragment>
             :
