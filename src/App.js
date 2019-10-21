@@ -35,10 +35,10 @@ class App extends Component {
     return (
       <div className="App">
         <Router history={history}>
+          <Navbar history={history} {...props}/>
           {
-            !!Adapter.getToken() ?
+            !!this.props.user ?
               <Fragment>
-                <Navbar history={history} {...props}/>
                 <Route path="/" exact component={Home} />
                 <Route path="/lessons" exact component={LessonsContainer} />
                 <Route path="/profile" exact component={Profile} />
@@ -46,7 +46,6 @@ class App extends Component {
               </Fragment>
             :
               <Fragment>
-                <Navbar history={history} {...props}/>
                 <Route path="/" exact component={Home} />
                 <Route path="/login" exact component={ReturningUser} />
                 <Route path="/signup" exact component={NewUser} />

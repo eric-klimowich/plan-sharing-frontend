@@ -24,7 +24,7 @@ class Navbar extends Component {
           </Link>
         </div>
         {
-          !!Adapter.getToken() ?
+          !!this.props.user ?
             <Fragment>
               <nav className="main-nav">
                 <ul className="main-nav__items">
