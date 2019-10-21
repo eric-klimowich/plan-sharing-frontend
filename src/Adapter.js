@@ -1,5 +1,7 @@
 import { BadTokenError } from './error'
 
+const API = 'http://localhost:3000'
+
 export default class Adapter {
   static headers() {
     return {
@@ -17,7 +19,7 @@ export default class Adapter {
   }
 
   static getLoggedInUserToken() {
-    return fetch('http://localhost:3000/api/v1/logged_in_user', {
+    return fetch(`${API}/api/v1/logged_in_user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +39,7 @@ export default class Adapter {
   }
 
   static getUserLogin(returningUser) {
-    return fetch('http://localhost:3000/api/v1/login', {
+    return fetch(`${API}/api/v1/login`, {
       method: 'POST',
       headers: this.headers(),
       body: JSON.stringify({
@@ -51,7 +53,7 @@ export default class Adapter {
   }
 
   static postUserSignup(newUser) {
-    return fetch('http://localhost:3000/api/v1/users', {
+    return fetch(`${API}/api/v1/users`, {
       method: 'POST',
       headers: this.headers(),
       body: JSON.stringify({
@@ -67,7 +69,7 @@ export default class Adapter {
   }
 
   static getLessons() {
-    return fetch('http://localhost:3000/api/v1/lessons', {
+    return fetch(`${API}/api/v1/lessons`, {
       method: 'GET',
       headers: this.headers()
     })
@@ -75,7 +77,7 @@ export default class Adapter {
   }
 
   static postNewLesson(lesson) {
-    return fetch('http://localhost:3000/api/v1/lessons', {
+    return fetch(`${API}/api/v1/lessons`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
