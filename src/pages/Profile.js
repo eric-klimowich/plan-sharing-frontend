@@ -20,8 +20,10 @@ class Profile extends Component {
   renderUserInfo = () => {
     return (
       <Fragment>
+      <div className="profile-container">
         <h1>{this.props.user.username}</h1>
         <p>{this.props.user.bio}</p>
+      </div>
       </Fragment>
     )
   }
