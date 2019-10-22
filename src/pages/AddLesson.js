@@ -14,19 +14,8 @@ class AddLesson extends Component {
     description: '',
     grade: '',
     subject: '',
-    file: ''
-  }
-
-  handleAddLesson = (event, lesson) => {
-    event.preventDefault()
-    Adapter.postNewLesson(lesson)
-    this.setState({
-      title: '',
-      description: '',
-      grade: '',
-      subject: '',
-      file: ''
-    })
+    file: '',
+    fileName: ''
   }
 
   handleChangeLessonInput = event => {
@@ -41,13 +30,39 @@ class AddLesson extends Component {
     }
   }
 
-  convertFiletoBase64 = file => {
+  handleSubmitLessonWithFile = (file, lesson) => {
+    console.log(file)
+    console.log(lesson)
+    Adapter.postNewLesson(file, lesson)
+    this.setState({
+      title: '',
+      description: '',
+      grade: '',
+      subject: '',
+      file: '',
+      fileName: ''
+    })
+  }
+
+
+  convertFileToBase64 = file => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => resolve(reader.result.split(',')[1]);
       reader.onerror = error => reject(error);
     })
+  }
+
+  convertAndPassFileToSubmit = () => {
+    this.convertFileToBase64(this.state.file).then(data => this.handleSubmitLessonWithFile(data, this.state))
+  }
+
+  handleAddLesson = event => {
+    event.preventDefault()
+    this.setState({
+      fileName: this.state.file.name
+    }, () => this.convertAndPassFileToSubmit())
   }
 
   render() {

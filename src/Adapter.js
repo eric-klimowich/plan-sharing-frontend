@@ -76,7 +76,7 @@ export default class Adapter {
     .then(r => r.json())
   }
 
-  static postNewLesson(lesson) {
+  static postNewLesson(file, lesson) {
     return fetch(`${API}/api/v1/lessons`, {
       method: 'POST',
       headers: {
@@ -89,7 +89,9 @@ export default class Adapter {
           title: lesson.title,
           content: lesson.content,
           grade_name: lesson.grade,
-          subject_name: lesson.subject
+          subject_name: lesson.subject,
+          file: file,
+          file_name: lesson.fileName
         }
       })
     })

@@ -81,7 +81,7 @@ export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonIn
   return (
     <div className="add-lesson">
       <h1 className="add-lesson__heading">Enter Lesson Info</h1>
-      <form className="add-lesson-form" onSubmit={(event) => handleAddLesson(event, state)}>
+      <form className="add-lesson-form" onSubmit={handleAddLesson}>
         <input
           className="add-lesson-form__input"
           type="text"
