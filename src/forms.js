@@ -93,7 +93,7 @@ export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonIn
         <input
           className="add-lesson-form__input"
           type="text"
-          name="content"
+          name="description"
           value={state.description}
           placeholder="enter description..."
           onChange={handleChangeLessonInput}

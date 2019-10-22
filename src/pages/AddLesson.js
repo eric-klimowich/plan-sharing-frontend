@@ -30,13 +30,19 @@ class AddLesson extends Component {
   }
 
   handleChangeLessonInput = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+    if (event.target.files) {
+      this.setState({
+        [event.target.name]: event.target.files[0]
+      })
+    } else {
+      this.setState({
+        [event.target.name]: event.target.value
+      })
+    }
   }
 
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     return (
       renderAddLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
