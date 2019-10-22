@@ -87,7 +87,7 @@ export default class Adapter {
       body: JSON.stringify({
         lesson: {
           title: lesson.title,
-          content: lesson.content,
+          description: lesson.description,
           grade_name: lesson.grade,
           subject_name: lesson.subject,
           file: file,
