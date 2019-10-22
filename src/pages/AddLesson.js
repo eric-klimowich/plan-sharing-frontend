@@ -11,9 +11,10 @@ class AddLesson extends Component {
 
   state = {
     title: '',
-    content: '',
+    description: '',
     grade: '',
-    subject: ''
+    subject: '',
+    file: ''
   }
 
   handleAddLesson = (event, lesson) => {
@@ -21,9 +22,10 @@ class AddLesson extends Component {
     Adapter.postNewLesson(lesson)
     this.setState({
       title: '',
-      content: '',
+      description: '',
       grade: '',
-      subject: ''
+      subject: '',
+      file: ''
     })
   }
 

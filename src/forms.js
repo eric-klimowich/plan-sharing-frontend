@@ -94,8 +94,8 @@ export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonIn
           className="add-lesson-form__input"
           type="text"
           name="content"
-          value={state.content}
-          placeholder="enter content..."
+          value={state.description}
+          placeholder="enter description..."
           onChange={handleChangeLessonInput}
         />
         <select
@@ -124,6 +124,13 @@ export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonIn
               )})
             }
         </select>
+        <input
+          className="add-lesson-form__input"
+          type="file"
+          name="file"
+          placeholder="add lesson plan file...."
+          onChange={handleChangeLessonInput}
+        />
         <input
           type="submit"
           name="submit"
