@@ -15,7 +15,6 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <header className="main-header">
         <div className="main-header__title">

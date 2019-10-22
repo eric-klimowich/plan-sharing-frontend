@@ -22,7 +22,6 @@ class App extends Component {
   componentDidMount() {
     Adapter.getLoggedInUserToken()
       .then(user => {
-        console.log(user)
         this.props.setUser(user)
       })
       .catch(err => {
