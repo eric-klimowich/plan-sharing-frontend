@@ -4,3 +4,10 @@ export const setUser = user => {
     payload: user
   }
 }
+
+export const setLessons = lessons => {
+  return {
+    type: 'SET_LESSONS',
+    payload: lessons
+  }
+}

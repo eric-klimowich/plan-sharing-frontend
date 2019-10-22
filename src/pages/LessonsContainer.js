@@ -4,16 +4,15 @@ import { connect } from 'react-redux'
 import Lesson from '../elements/Lesson'
 import Adapter from '../Adapter'
 
-class LessonsContainer extends Component {
+import { setLessons } from '../actions'
 
-  state = {
-    lessons: []
-  }
+
+class LessonsContainer extends Component {
 
   renderLessons = () => {
     return (
       <Fragment>
-        {this.state.lessons.map(lesson => {
+        {this.props.lessons.map(lesson => {
           return (
             <Lesson
               key={lesson.id}
@@ -30,14 +29,11 @@ class LessonsContainer extends Component {
 
   componentDidMount() {
     Adapter.getLessons()
-      .then(lessons => {
-        this.setState({
-          lessons
-        })
-      })
+      .then(lessons => this.props.setLessons(lessons))
   }
 
   render() {
+    console.log(this.props)
     return (
       this.renderLessons()
     )
@@ -46,8 +42,15 @@ class LessonsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    lessons: state.lessons
   }
 }
 
-export default connect(mapStateToProps)(LessonsContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    setLessons: (lessons) => dispatch(setLessons(lessons))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LessonsContainer)
