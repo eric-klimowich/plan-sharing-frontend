@@ -15,7 +15,13 @@ class LessonsContainer extends Component {
       <Fragment>
         {this.state.lessons.map(lesson => {
           return (
-            <Lesson key={lesson.id} title={lesson.title} description={lesson.description} />
+            <Lesson
+              key={lesson.id}
+              id={lesson.id}
+              title={lesson.title}
+              description={lesson.description}
+              fileName={lesson.file_name}
+            />
           )
         })}
       </Fragment>
