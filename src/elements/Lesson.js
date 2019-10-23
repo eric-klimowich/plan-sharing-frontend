@@ -12,6 +12,7 @@ const Lesson = props => {
       <a href={`http://localhost:3000/api/v1/lessons/${props.id}`}>
         {props.fileName}
       </a>
+      <button>Delete</button>
     </Fragment>
   )
 }
