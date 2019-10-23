@@ -1,6 +1,11 @@
 import React, { Component, Fragment } from 'react'
 
 class Lesson extends Component {
+
+  componentDidMount() {
+
+  }
+  
   render() {
     console.log(this.props)
     return (

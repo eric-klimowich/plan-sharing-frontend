@@ -98,4 +98,14 @@ export default class Adapter {
     .then(r => r.json())
   }
 
+  static deleteLesson(id) {
+    return fetch(`${API}/api/v1/lessons/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`
+      }
+    })
+    .then(r => r.json())
+  }
+
 }
