@@ -31,8 +31,6 @@ class AddLesson extends Component {
   }
 
   handleSubmitLessonWithFile = (file, lesson) => {
-    console.log(file)
-    console.log(lesson)
     Adapter.postNewLesson(file, lesson)
     this.setState({
       title: '',

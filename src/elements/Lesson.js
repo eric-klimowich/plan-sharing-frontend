@@ -7,7 +7,9 @@ class Lesson extends Component {
   handleDeleteLesson = (event) => {
     console.log(event.target)
     event.preventDefault()
-    Adapter.deleteLesson(this.props.id)
+    fetch(`http://localhost:3000/api/v1/lessons/${this.props.id}`, {
+      method: 'DELETE'
+    })
   }
 
   render() {
