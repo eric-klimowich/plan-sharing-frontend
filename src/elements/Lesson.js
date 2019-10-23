@@ -1,13 +1,16 @@
 import React, { Component, Fragment } from 'react'
 
+import Adapter from '../Adapter'
+
 class Lesson extends Component {
 
-  componentDidMount() {
-
+  handleDeleteLesson = (event) => {
+    console.log(event.target)
+    event.preventDefault()
+    Adapter.deleteLesson(this.props.id)
   }
-  
+
   render() {
-    console.log(this.props)
     return (
       <Fragment>
         <h1>{this.props.title}</h1>
@@ -18,7 +21,7 @@ class Lesson extends Component {
         <a href={`http://localhost:3000/api/v1/lessons/${this.props.id}`}>
           {this.props.fileName}
         </a>
-        <button>Delete</button>
+        <button onClick={this.handleDeleteLesson}>Delete</button>
       </Fragment>
     )
   }
