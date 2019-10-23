@@ -2,6 +2,8 @@ import { BadTokenError } from './error'
 
 const API = 'http://localhost:3000'
 
+const HAPI = 'https://plan-sharing-backend.herokuapp.com'
+
 export default class Adapter {
   static headers() {
     return {
@@ -19,7 +21,7 @@ export default class Adapter {
   }
 
   static getLoggedInUserToken() {
-    return fetch(`${API}/api/v1/logged_in_user`, {
+    return fetch(`${HAPI}/api/v1/logged_in_user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +41,7 @@ export default class Adapter {
   }
 
   static getUserLogin(returningUser) {
-    return fetch(`${API}/api/v1/login`, {
+    return fetch(`${HAPI}/api/v1/login`, {
       method: 'POST',
       headers: this.headers(),
       body: JSON.stringify({
@@ -53,7 +55,7 @@ export default class Adapter {
   }
 
   static postUserSignup(newUser) {
-    return fetch(`${API}/api/v1/users`, {
+    return fetch(`${HAPI}/api/v1/users`, {
       method: 'POST',
       headers: this.headers(),
       body: JSON.stringify({
@@ -69,7 +71,7 @@ export default class Adapter {
   }
 
   static getLessons() {
-    return fetch(`${API}/api/v1/lessons`, {
+    return fetch(`${HAPI}/api/v1/lessons`, {
       method: 'GET',
       headers: this.headers()
     })
@@ -77,7 +79,7 @@ export default class Adapter {
   }
 
   static postNewLesson(file, lesson) {
-    return fetch(`${API}/api/v1/lessons`, {
+    return fetch(`${HAPI}/api/v1/lessons`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -99,7 +101,7 @@ export default class Adapter {
   }
 
   static deleteLesson(id) {
-    return fetch(`${API}/api/v1/lessons/${id}`, {
+    return fetch(`${HAPI}/api/v1/lessons/${id}`, {
       method: 'DELETE'
     })
   }
