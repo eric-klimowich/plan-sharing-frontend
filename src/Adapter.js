@@ -2,7 +2,7 @@ import { BadTokenError } from './error'
 
 const API = 'http://localhost:3000'
 
-const HAPI = 'https://plan-sharing-backend.herokuapp.com'
+export const HAPI = 'https://plan-sharing-backend.herokuapp.com'
 
 export default class Adapter {
   static headers() {

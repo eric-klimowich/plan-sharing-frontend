@@ -25,6 +25,7 @@ class NewUser extends Component {
     event.preventDefault()
     Adapter.postUserSignup(newUser)
       .then(user => {
+        console.log(user)
         this.props.setUser(user.user)
         localStorage.setItem('token', user.jwt)
         this.props.history.push('/profile')

@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react'
 
 import Adapter from '../Adapter'
 
+import { HAPI } from '../Adapter'
+
 class Lesson extends Component {
 
   handleDeleteLesson = (event) => {
@@ -17,7 +19,7 @@ class Lesson extends Component {
         <p>Grade: {this.props.grade}</p>
         <p>Subject: {this.props.subject}</p>
         <p>Created by: {this.props.user}</p>
-        <a href={`http://localhost:3000/api/v1/lessons/${this.props.id}`}>
+        <a href={`${HAPI}/api/v1/lessons/${this.props.id}`}>
           {this.props.fileName}
         </a>
         <button onClick={this.handleDeleteLesson}>Delete</button>
