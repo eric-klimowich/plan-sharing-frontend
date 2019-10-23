@@ -102,7 +102,6 @@ export default class Adapter {
     return fetch(`${API}/api/v1/lessons/${id}`, {
       method: 'DELETE'
     })
-    .then(r => r.json())
   }
 
 }

@@ -5,11 +5,8 @@ import Adapter from '../Adapter'
 class Lesson extends Component {
 
   handleDeleteLesson = (event) => {
-    console.log(event.target)
     event.preventDefault()
-    fetch(`http://localhost:3000/api/v1/lessons/${this.props.id}`, {
-      method: 'DELETE'
-    })
+    Adapter.deleteLesson(this.props.id)
   }
 
   render() {
