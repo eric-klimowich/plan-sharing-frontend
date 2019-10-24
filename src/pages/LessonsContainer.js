@@ -6,7 +6,6 @@ import Adapter from '../Adapter'
 
 import { setLessons } from '../actions'
 
-
 class LessonsContainer extends Component {
 
   renderLessons = () => {

@@ -6,6 +6,7 @@ import Adapter from '../Adapter'
 import { renderAddLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
+import { addNewLesson } from '../actions'
 
 class AddLesson extends Component {
 
@@ -77,4 +78,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(AddLesson)
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewLesson: (lesson) => dispatch(addNewLesson(lesson))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddLesson)
