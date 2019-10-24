@@ -11,3 +11,10 @@ export const setLessons = lessons => {
     payload: lessons
   }
 }
+
+export const addNewLesson = lesson => {
+  return {
+    type: 'ADD_NEW_LESSON',
+    payload: lesson
+  }
+}
