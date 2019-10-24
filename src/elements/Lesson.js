@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 import Adapter from '../Adapter'
 
-import { HAPI } from '../Adapter'
+import { API } from '../Adapter'
 
 class Lesson extends Component {
 
@@ -19,7 +19,7 @@ class Lesson extends Component {
         <p>Grade: {this.props.grade}</p>
         <p>Subject: {this.props.subject}</p>
         <p>Created by: {this.props.user}</p>
-        <a href={`${HAPI}/api/v1/lessons/${this.props.id}`}>
+        <a href={`${API}/api/v1/lessons/${this.props.id}`}>
           {this.props.fileName}
         </a>
         <button onClick={this.handleDeleteLesson}>Delete</button>

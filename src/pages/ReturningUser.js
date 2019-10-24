@@ -17,7 +17,6 @@ class ReturningUser extends Component {
     event.preventDefault()
     Adapter.getUserLogin(returningUser)
     .then(user => {
-      console.log(user)
       this.props.setUser(user.user)
       localStorage.setItem('token', user.jwt)
       this.props.history.push('/profile')

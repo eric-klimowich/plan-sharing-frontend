@@ -32,6 +32,7 @@ class AddLesson extends Component {
 
   handleSubmitLessonWithFile = (file, lesson) => {
     Adapter.postNewLesson(file, lesson)
+    this.props.history.push('/lessons')
     this.setState({
       title: '',
       description: '',
