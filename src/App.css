@@ -56,6 +56,18 @@ body {
   font-weight: bold;
 }
 
+.main-nav__item--cta a {
+  color: white;
+  background: black;
+  padding: 0.5rem 1rem;
+  border-radius: .5rem;
+}
+
+.main-nav__item--cta a:hover {
+  color: black;
+  background: white;
+  border: none;
+}
 
 .new-user {
   display: flex;

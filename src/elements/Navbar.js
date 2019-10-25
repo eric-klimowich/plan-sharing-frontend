@@ -64,7 +64,7 @@ class Navbar extends Component {
                       Login
                     </Link>
                   </li>
-                  <li className="main-nav__item">
+                  <li className="main-nav__item--cta">
                     <Link to="/signup">
                       Sign up
                     </Link>
