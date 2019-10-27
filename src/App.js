@@ -8,6 +8,7 @@ import './App.css';
 
 import Navbar from './elements/Navbar'
 import Home from './pages/Home'
+import About from './pages/About'
 import ReturningUser from './pages/ReturningUser'
 import NewUser from './pages/NewUser'
 import LessonsContainer from './pages/LessonsContainer'
@@ -39,6 +40,7 @@ class App extends Component {
             !!this.props.user ?
               <Fragment>
                 <Route path="/" exact component={Home} />
+                <Route path="/about" exact component={About} />
                 <Route path="/lessons" exact component={LessonsContainer} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/profile/addlesson" exact component={AddLesson} />
