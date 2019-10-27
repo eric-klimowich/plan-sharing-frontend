@@ -42,6 +42,11 @@ class Navbar extends Component {
                       Add Lesson
                     </Link>
                   </li>
+                  <li className="main-nav__item">
+                    <Link to="/about">
+                      About
+                    </Link>
+                  </li>
                   <li>
                     <button className="main-nav__item logout-btn" onClick={this.handleLogout}>
                       Logout
@@ -57,6 +62,11 @@ class Navbar extends Component {
                   <li className="main-nav__item">
                     <Link to="/lessons">
                       All Lessons
+                    </Link>
+                  </li>
+                  <li className="main-nav__item">
+                    <Link to="/about">
+                      About
                     </Link>
                   </li>
                   <li className="main-nav__item">
