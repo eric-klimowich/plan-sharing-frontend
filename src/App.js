@@ -48,6 +48,7 @@ class App extends Component {
             :
               <Fragment>
                 <Route path="/" exact component={Home} />
+                <Route path="/about" exact component={About} />
                 <Route path="/login" exact component={ReturningUser} />
                 <Route path="/signup" exact component={NewUser} />
                 <Route path="/lessons" exact component={LessonsContainer} />
