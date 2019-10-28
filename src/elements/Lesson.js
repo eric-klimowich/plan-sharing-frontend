@@ -22,6 +22,8 @@ class Lesson extends Component {
         <a href={`${API}/api/v1/lessons/${this.props.id}`}>
           {this.props.fileName}
         </a>
+        <br/>
+        <button>Edit</button>
         <button onClick={this.handleDeleteLesson}>Delete</button>
       </Fragment>
     )
