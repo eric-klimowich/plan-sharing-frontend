@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
@@ -16,11 +17,17 @@ class EditLesson extends Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.props.lessonIdToEdit)
     return (
       renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
   }
 }
 
-export default EditLesson
+const mapStateToProps = state => {
+  return {
+    lessonIdToEdit: state.lessonIdToEdit
+  }
+}
+
+export default connect(mapStateToProps)(EditLesson)

@@ -5,12 +5,12 @@ import Adapter from '../Adapter'
 
 import { API } from '../Adapter'
 
-import { setLessonToEdit } from '../actions'
+import { setLessonIdToEdit } from '../actions'
 
 class Lesson extends Component {
 
-  handleEditLesson = (event, lesson) => {
-    this.props.setLessonToEdit(lesson)
+  handleEditLesson = (event, lessonId) => {
+    this.props.setLessonIdToEdit(lessonId)
     this.props.history.push('/profile/edit-lesson')
   }
 
@@ -31,7 +31,7 @@ class Lesson extends Component {
           {this.props.fileName}
         </a>
         <br/>
-        <button onClick={(event) => this.handleEditLesson(event, this.props)}>Edit</button>
+        <button onClick={(event) => this.handleEditLesson(event, this.props.id)}>Edit</button>
         <button onClick={this.handleDeleteLesson}>Delete</button>
       </Fragment>
     )
@@ -40,7 +40,7 @@ class Lesson extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setLessonToEdit: (lesson) => dispatch(setLessonToEdit(lesson))
+    setLessonIdToEdit: (lessonId) => dispatch(setLessonIdToEdit(lessonId))
   }
 }
 
