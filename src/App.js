@@ -14,6 +14,7 @@ import NewUser from './pages/NewUser'
 import LessonsContainer from './pages/LessonsContainer'
 import Profile from './pages/Profile'
 import AddLesson from './pages/AddLesson'
+import EditLesson from './pages/EditLesson'
 import Adapter from './Adapter'
 
 import { setUser } from './actions'
@@ -44,7 +45,7 @@ class App extends Component {
                 <Route path="/lessons" exact component={LessonsContainer} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/profile/add-lesson" exact component={AddLesson} />
-                <Route path="/profile/edit-lesson" exact component={AddLesson} />
+                <Route path="/profile/edit-lesson" exact component={EditLesson} />
               </Fragment>
             :
               <Fragment>
