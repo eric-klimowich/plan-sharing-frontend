@@ -12,7 +12,7 @@ class FullLessonCard extends Component {
 
   handleDeleteLesson = (event) => {
     event.preventDefault()
-    Adapter.deleteLesson(this.props.id)
+    Adapter.deleteLesson(this.props.pickedLesson.id)
   }
 
   handleBackToAllLessons = () => {

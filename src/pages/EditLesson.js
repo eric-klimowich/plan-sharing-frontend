@@ -46,7 +46,7 @@ class EditLesson extends Component {
 
 const mapStateToProps = state => {
   return {
-    lessonToEdit: state.lessonToEdit
+    pickedLesson: state.pickedLesson
   }
 }
 
