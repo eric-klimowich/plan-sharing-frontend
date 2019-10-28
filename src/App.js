@@ -18,6 +18,7 @@ import EditLesson from './pages/EditLesson'
 import Adapter from './Adapter'
 
 import { setUser } from './actions'
+import { setHistory } from './actions'
 
 class App extends Component {
 
@@ -30,9 +31,11 @@ class App extends Component {
         console.warn(err)
         localStorage.removeItem('token')
       })
+    this.props.setHistory(history)
   }
 
   render(props) {
+    console.log(this.props)
     return (
       <div className="App">
         <Router history={history}>
@@ -71,6 +74,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setUser: (user) => dispatch(setUser(user)),
+    setHistory: (history) => dispatch(setHistory(history))
   }
 }
 

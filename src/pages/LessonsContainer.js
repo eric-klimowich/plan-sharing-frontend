@@ -40,7 +40,6 @@ class LessonsContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       this.renderLessons()
     )

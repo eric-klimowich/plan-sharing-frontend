@@ -1,4 +1,5 @@
 const defaultState = {
+  history: null,
   user: null,
   lessons: [],
   lessonToEdit: null,
@@ -7,6 +8,8 @@ const defaultState = {
 
 export default function (state = defaultState, action) {
   switch(action.type) {
+    case 'SET_HISTORY':
+      return {...state, history: action.payload}
     case 'SET_USER':
       return {...state, user: action.payload}
     case 'SET_LESSONS':

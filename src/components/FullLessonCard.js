@@ -20,6 +20,7 @@ class FullLessonCard extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <Fragment>
         <h1>{this.props.title}</h1>
@@ -38,10 +39,16 @@ class FullLessonCard extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    history: state.history
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     setLessonToEdit: (lesson) => dispatch(setLessonToEdit(lesson))
   }
 }
 
-export default connect(null, mapDispatchToProps)(FullLessonCard)
+export default connect(mapStateToProps, mapDispatchToProps)(FullLessonCard)

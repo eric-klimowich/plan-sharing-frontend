@@ -1,3 +1,10 @@
+export const setHistory = history => {
+  return {
+    type: 'SET_HISTORY',
+    payload: history
+  }
+}
+
 export const setUser = user => {
   return {
     type: 'SET_USER',
