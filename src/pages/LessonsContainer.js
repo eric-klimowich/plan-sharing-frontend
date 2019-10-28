@@ -1,15 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-
 import AbridgedLessonCard from '../components/AbridgedLessonCard'
 import FullLessonCard from '../components/FullLessonCard'
 import Adapter from '../Adapter'
-
 import { setLessons } from '../actions'
 
 class LessonsContainer extends Component {
   renderLessons = () => {
-    if (this.props.lessonToShow) {
+    if (this.props.pickedLesson) {
       return (
         <FullLessonCard />
       )
@@ -51,9 +49,9 @@ class LessonsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
     lessons: state.lessons,
-    lessonToShow: state.lessonToShow
+    pickedLesson: state.pickedLesson
+
   }
 }
 

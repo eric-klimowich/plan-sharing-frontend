@@ -1,13 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-
-import { setLessonToShow } from '../actions'
+import { setPickedLesson } from '../actions'
 
 class AbridgedLessonCard extends Component {
 
   handleShowLesson = (event, lesson) => {
-    this.props.setLessonToShow(lesson)
-    // this.props.history.push('/profile/edit-lesson')
+    this.props.setPickedLesson(lesson)
   }
 
   render() {
@@ -30,7 +28,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setLessonToShow: (lesson) => dispatch(setLessonToShow(lesson))
+    setPickedLesson: (lesson) => dispatch(setPickedLesson(lesson))
   }
 }
 

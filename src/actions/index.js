@@ -26,16 +26,9 @@ export const addNewLesson = lesson => {
   }
 }
 
-export const setLessonToShow = lesson => {
+export const setPickedLesson = lesson => {
   return {
-    type: 'SET_LESSON_TO_SHOW',
-    payload: lesson
-  }
-}
-
-export const setLessonToEdit = lesson => {
-  return {
-    type: 'SET_LESSON_TO_EDIT',
+    type: 'SET_PICKED_LESSON',
     payload: lesson
   }
 }
