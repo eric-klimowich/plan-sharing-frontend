@@ -18,10 +18,28 @@ class EditLesson extends Component {
     fileName: ''
   }
 
+  handleChangeLessonInput = event => {
+    if (event.target.files) {
+      this.setState({
+        [event.target.name]: event.target.files[0]
+      })
+    } else {
+      this.setState({
+        [event.target.name]: event.target.value
+      })
+    }
+  }
+
+  handleEditLesson = (event) => {
+    event.preventDefault()
+    console.log(event.target)
+  }
+
   render() {
     console.log(this.props)
+    console.log(this.state)
     return (
-      renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
+      renderLessonForm(this.handleEditLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
   }
 }

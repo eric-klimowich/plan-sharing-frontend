@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
-import Lesson from '../components/Lesson'
+import AbridgedLessonCard from '../components/AbridgedLessonCard'
 import Adapter from '../Adapter'
 
 import { setLessons } from '../actions'
@@ -12,7 +12,7 @@ class LessonsContainer extends Component {
       <Fragment>
         {this.props.lessons.map(lesson => {
           return (
-            <Lesson
+            <AbridgedLessonCard
               key={lesson.lesson_data.id}
               id={lesson.lesson_data.id}
               title={lesson.lesson_data.title}
@@ -37,6 +37,7 @@ class LessonsContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       this.renderLessons()
     )
