@@ -7,7 +7,7 @@ import { API } from '../Adapter'
 
 import { setLessonToEdit } from '../actions'
 
-class Lesson extends Component {
+class FullLessonCard extends Component {
 
   handleEditLesson = (event, lesson) => {
     this.props.setLessonToEdit(lesson)
@@ -44,4 +44,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Lesson)
+export default connect(null, mapDispatchToProps)(FullLessonCard)

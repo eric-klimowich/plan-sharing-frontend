@@ -16,12 +16,8 @@ class LessonsContainer extends Component {
               key={lesson.lesson_data.id}
               id={lesson.lesson_data.id}
               title={lesson.lesson_data.title}
-              description={lesson.lesson_data.description}
               grade={lesson.lesson_data.grade}
               subject={lesson.lesson_data.subject}
-              user={lesson.lesson_data.user}
-              fileName={lesson.lesson_data.file_name}
-              history={this.props.history}
             />
           )
         })}
