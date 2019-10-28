@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
-import Lesson from '../elements/Lesson'
+import Lesson from '../components/Lesson'
 import Adapter from '../Adapter'
 
 import { setLessons } from '../actions'
