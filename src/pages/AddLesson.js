@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Adapter from '../Adapter'
 
-import { renderAddLessonForm } from '../forms'
+import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
 import { addNewLesson } from '../actions'
@@ -70,7 +70,7 @@ class AddLesson extends Component {
 
   render() {
     return (
-      renderAddLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
+      renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
   }
 }

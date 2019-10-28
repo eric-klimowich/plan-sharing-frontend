@@ -77,7 +77,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
   )
 }
 
-export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonInput, grades, subjects) => {
+export const renderLessonForm = (handleAddLesson, state, handleChangeLessonInput, grades, subjects) => {
   return (
     <div className="add-lesson">
       <h1 className="add-lesson__heading">Enter Lesson Info</h1>

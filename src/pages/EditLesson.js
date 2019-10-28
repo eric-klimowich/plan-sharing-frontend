@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { renderAddLessonForm } from '../forms'
+import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
 
@@ -17,7 +17,7 @@ class EditLesson extends Component {
 
   render() {
     return (
-      renderAddLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
+      renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
   }
 }
