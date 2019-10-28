@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react'
 import { connect } from 'react-redux'
 
+import Modal from '../components/Modal'
+
 class Profile extends Component {
 
   renderProfile = () => {
@@ -33,6 +35,7 @@ class Profile extends Component {
     return (
       <Fragment>
         {this.props.user ? this.renderProfile() : <h1>Please Login</h1>}
+        <Modal />
       </Fragment>
     )
   }
