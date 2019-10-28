@@ -1,11 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { Router, Route } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import history from './history'
-
 import './App.css';
-
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -16,7 +13,6 @@ import Profile from './pages/Profile'
 import AddLesson from './pages/AddLesson'
 import EditLesson from './pages/EditLesson'
 import Adapter from './Adapter'
-
 import { setUser } from './actions'
 import { setHistory } from './actions'
 
@@ -35,11 +31,10 @@ class App extends Component {
   }
 
   render(props) {
-    console.log(this.props)
     return (
       <div className="App">
-        <Router history={history}>
-          <Navbar history={history} {...props}/>
+        <BrowserRouter>
+          <Navbar/>
           {
             !!this.props.user ?
               <Fragment>
@@ -59,7 +54,7 @@ class App extends Component {
                 <Route path="/lessons" exact component={LessonsContainer} />
               </Fragment>
           }
-        </Router>
+        </BrowserRouter>
       </div>
     );
   }

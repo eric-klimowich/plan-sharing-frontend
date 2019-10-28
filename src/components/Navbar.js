@@ -1,11 +1,10 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import Adapter from '../Adapter'
-
 import { setUser } from '../actions'
-
+import { renderLoggedInNav } from '../navs'
+import { renderLoggedOutNav } from '../navs'
 class Navbar extends Component {
 
   handleLogout = () => {
@@ -24,64 +23,9 @@ class Navbar extends Component {
         </div>
         {
           !!this.props.user ?
-            <Fragment>
-              <nav className="main-nav">
-                <ul className="main-nav__items">
-                  <li className="main-nav__item">
-                    <Link to="/profile">
-                      Profile
-                    </Link>
-                  </li>
-                  <li className="main-nav__item">
-                    <Link to="/lessons">
-                      All Lessons
-                    </Link>
-                  </li>
-                  <li className="main-nav__item">
-                    <Link to="/profile/add-lesson">
-                      Add Lesson
-                    </Link>
-                  </li>
-                  <li className="main-nav__item">
-                    <Link to="/about">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <button className="main-nav__item logout-btn" onClick={this.handleLogout}>
-                      Logout
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </Fragment>
+            renderLoggedInNav(this.handleLogout)
             :
-            <Fragment>
-              <nav className="main-nav">
-                <ul className="main-nav__items">
-                  <li className="main-nav__item">
-                    <Link to="/lessons">
-                      All Lessons
-                    </Link>
-                  </li>
-                  <li className="main-nav__item">
-                    <Link to="/about">
-                      About
-                    </Link>
-                  </li>
-                  <li className="main-nav__item">
-                    <Link to="/login">
-                      Login
-                    </Link>
-                  </li>
-                  <li className="main-nav__item--cta">
-                    <Link to="/signup">
-                      Sign up
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </Fragment>
+            renderLoggedOutNav()
         }
       </header>
     )
