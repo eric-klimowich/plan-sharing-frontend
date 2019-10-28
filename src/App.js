@@ -43,7 +43,8 @@ class App extends Component {
                 <Route path="/about" exact component={About} />
                 <Route path="/lessons" exact component={LessonsContainer} />
                 <Route path="/profile" exact component={Profile} />
-                <Route path="/profile/addlesson" exact component={AddLesson} />
+                <Route path="/profile/add-lesson" exact component={AddLesson} />
+                <Route path="/profile/edit-lesson" exact component={AddLesson} />
               </Fragment>
             :
               <Fragment>
