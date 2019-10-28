@@ -22,8 +22,11 @@ class LessonsContainer extends Component {
                 key={lesson.lesson_data.id}
                 id={lesson.lesson_data.id}
                 title={lesson.lesson_data.title}
+                description={lesson.lesson_data.description}
                 grade={lesson.lesson_data.grade}
                 subject={lesson.lesson_data.subject}
+                file_name={lesson.lesson_data.file_name}
+                user={lesson.lesson_data.user}
               />
             )
           })}
