@@ -21,6 +21,7 @@ class LessonsContainer extends Component {
               subject={lesson.lesson_data.subject}
               user={lesson.lesson_data.user}
               fileName={lesson.lesson_data.file_name}
+              history={this.props.history}
             />
           )
         })}

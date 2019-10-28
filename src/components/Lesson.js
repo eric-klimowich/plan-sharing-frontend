@@ -7,8 +7,7 @@ import { API } from '../Adapter'
 class Lesson extends Component {
 
   handleEditLesson = (event, lesson) => {
-    console.log(event.target)
-    console.log(lesson)
+    this.props.history.push('/edit-lesson')
   }
 
   handleDeleteLesson = (event) => {
