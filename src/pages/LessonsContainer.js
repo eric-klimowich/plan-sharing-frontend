@@ -3,22 +3,13 @@ import { connect } from 'react-redux'
 
 import Lesson from '../components/Lesson'
 import Adapter from '../Adapter'
-import Modal from '../components/Modal'
 
 import { setLessons } from '../actions'
 
 class LessonsContainer extends Component {
-
   renderLessons = () => {
     return (
       <Fragment>
-        <Modal />
-        <button  onClick={event => {
-              console.log(event.target)
-            }}
-        >
-          show Modal
-        </button>
         {this.props.lessons.map(lesson => {
           return (
             <Lesson
