@@ -1,12 +1,16 @@
 import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
 
 import Adapter from '../Adapter'
 
 import { API } from '../Adapter'
 
+import { setLessonToEdit } from '../actions'
+
 class Lesson extends Component {
 
   handleEditLesson = (event, lesson) => {
+    this.props.setLessonToEdit(lesson)
     this.props.history.push('/profile/edit-lesson')
   }
 
@@ -34,4 +38,10 @@ class Lesson extends Component {
   }
 }
 
-export default Lesson
+const mapDispatchToProps = dispatch => {
+  return {
+    setLessonToEdit: (lesson) => dispatch(setLessonToEdit(lesson))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Lesson)

@@ -12,8 +12,8 @@ export default function (state = defaultState, action) {
       return {...state, lessons: action.payload}
     case 'ADD_NEW_LESSON':
       return {...state, lessons: [...state.lessons, action.payload]}
-    case 'ADD_NEW_LESSON':
-      return {...state, lessonToEdit: [action.payload]}
+    case 'SET_LESSON_TO_EDIT':
+      return {...state, lessonToEdit: action.payload}
     default:
       return state
   }

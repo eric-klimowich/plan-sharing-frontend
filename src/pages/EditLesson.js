@@ -16,6 +16,7 @@ class EditLesson extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
