@@ -1,6 +1,7 @@
 const defaultState = {
   user: null,
-  lessons: []
+  lessons: [],
+  lessonToEdit: null
 }
 
 export default function (state = defaultState, action) {
@@ -11,6 +12,8 @@ export default function (state = defaultState, action) {
       return {...state, lessons: action.payload}
     case 'ADD_NEW_LESSON':
       return {...state, lessons: [...state.lessons, action.payload]}
+    case 'ADD_NEW_LESSON':
+      return {...state, lessonToEdit: [action.payload]}
     default:
       return state
   }

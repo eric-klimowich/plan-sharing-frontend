@@ -6,8 +6,9 @@ import { API } from '../Adapter'
 
 class Lesson extends Component {
 
-  handleEditLesson = (event) => {
+  handleEditLesson = (event, lesson) => {
     console.log(event.target)
+    console.log(lesson)
   }
 
   handleDeleteLesson = (event) => {
@@ -27,7 +28,7 @@ class Lesson extends Component {
           {this.props.fileName}
         </a>
         <br/>
-        <button onClick={this.handleEditLesson}>Edit</button>
+        <button onClick={(event) => this.handleEditLesson(event, this.props)}>Edit</button>
         <button onClick={this.handleDeleteLesson}>Delete</button>
       </Fragment>
     )

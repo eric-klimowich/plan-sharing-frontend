@@ -18,3 +18,10 @@ export const addNewLesson = lesson => {
     payload: lesson
   }
 }
+
+export const setLessonToEdit = lesson => {
+  return {
+    type: 'SET_LESSON_TO_EDIT',
+    payload: lesson
+  }
+}
