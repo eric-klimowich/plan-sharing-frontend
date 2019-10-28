@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import Adapter from '../Adapter'
+
 import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
@@ -17,7 +19,7 @@ class EditLesson extends Component {
   }
 
   render() {
-    console.log(this.props.lessonIdToEdit)
+    console.log(this.props)
     return (
       renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
@@ -26,7 +28,7 @@ class EditLesson extends Component {
 
 const mapStateToProps = state => {
   return {
-    lessonIdToEdit: state.lessonIdToEdit
+    lessonToEdit: state.lessonToEdit
   }
 }
 

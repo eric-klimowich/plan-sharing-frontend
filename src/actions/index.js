@@ -19,9 +19,9 @@ export const addNewLesson = lesson => {
   }
 }
 
-export const setLessonIdToEdit = lessonId => {
+export const setLessonToEdit = lesson => {
   return {
-    type: 'SET_LESSON_ID_TO_EDIT',
-    payload: lessonId
+    type: 'SET_LESSON_TO_EDIT',
+    payload: lesson
   }
 }
