@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Adapter from '../Adapter'
 
 class MyLessons extends Component {
 
@@ -7,8 +8,10 @@ class MyLessons extends Component {
   }
 
   componentDidMount() {
-    
+    Adapter.getMyLessons()
+      .then(console.log)
   }
+
   render() {
     return (
       <div>In MyLessons</div>
