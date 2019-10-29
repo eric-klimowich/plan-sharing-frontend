@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <Navbar/>
+          <Navbar />
           {
             !!this.props.user ?
               <Fragment>

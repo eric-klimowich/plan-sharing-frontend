@@ -29,7 +29,7 @@ class Profile extends Component {
   }
 
   render() {
-    // console.log(this.props)
+    console.log(this.props)
     return (
       <Fragment>
         {this.props.user ? this.renderProfile() : <h1>Please Login</h1>}
