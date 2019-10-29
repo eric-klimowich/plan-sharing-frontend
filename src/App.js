@@ -8,7 +8,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ReturningUser from './pages/ReturningUser'
 import NewUser from './pages/NewUser'
-import LessonsContainer from './pages/LessonsContainer'
+import AllLessons from './pages/AllLessons'
 import Profile from './pages/Profile'
 import MyLessons from './pages/MyLessons'
 import AddLesson from './pages/AddLesson'
@@ -41,7 +41,7 @@ class App extends Component {
               <Fragment>
                 <Route path="/" exact component={Home} />
                 <Route path="/about" exact component={About} />
-                <Route path="/lessons" exact component={LessonsContainer} />
+                <Route path="/lessons" exact component={AllLessons} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/profile/my-lessons" exact component={MyLessons} />
                 <Route path="/profile/add-lesson" exact component={AddLesson} />
@@ -53,7 +53,7 @@ class App extends Component {
                 <Route path="/about" exact component={About} />
                 <Route path="/login" exact component={ReturningUser} />
                 <Route path="/signup" exact component={NewUser} />
-                <Route path="/lessons" exact component={LessonsContainer} />
+                <Route path="/lessons" exact component={AllLessons} />
               </Fragment>
           }
         </BrowserRouter>

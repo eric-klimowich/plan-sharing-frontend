@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import AbridgedLessonCard from '../components/AbridgedLessonCard'
 import FullLessonCard from '../components/FullLessonCard'
-import Adapter from '../Adapter'
-import { setLessons } from '../actions'
 
 class LessonsContainer extends Component {
   renderLessons = () => {
@@ -33,13 +31,6 @@ class LessonsContainer extends Component {
     }
   }
 
-  componentDidMount() {
-    Adapter.getLessons()
-      .then(lessons => {
-        this.props.setLessons(lessons)
-      })
-  }
-
   render() {
     return (
       this.renderLessons()
@@ -49,16 +40,8 @@ class LessonsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    lessons: state.lessons,
     pickedLesson: state.pickedLesson
-
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setLessons: (lessons) => dispatch(setLessons(lessons))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LessonsContainer)
+export default connect(mapStateToProps)(LessonsContainer)

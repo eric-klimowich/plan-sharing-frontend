@@ -4,15 +4,18 @@ import Adapter from '../Adapter'
 class MyLessons extends Component {
 
   state = {
-    mylessons: []
+    myLessons: []
   }
 
   componentDidMount() {
     Adapter.getMyLessons()
-      .then(console.log)
+      .then(myLessons => {
+        this.setState({ myLessons })
+      })
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>In MyLessons</div>
     )
