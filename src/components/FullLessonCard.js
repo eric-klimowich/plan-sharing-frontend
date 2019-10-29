@@ -32,7 +32,7 @@ class FullLessonCard extends Component {
           {this.props.pickedLesson.file_name}
         </a>
         <br/>
-        <button onClick={(event) => this.handleEditLesson(event, this.props)}>Edit</button>
+        <button onClick={this.handleEditLesson}>Edit</button>
         <button onClick={this.handleDeleteLesson}>Delete</button>
         <button onClick={this.handleBackToAllLessons}>Back to All Lessons</button>
       </Fragment>
