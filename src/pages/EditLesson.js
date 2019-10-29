@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import Adapter from '../Adapter'
@@ -6,6 +6,7 @@ import Adapter from '../Adapter'
 import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
+import { hideEditLessonForm } from '../actions'
 
 class EditLesson extends Component {
 
@@ -39,7 +40,10 @@ class EditLesson extends Component {
     console.log(this.props)
     console.log(this.state)
     return (
-      renderLessonForm(this.handleEditLesson, this.state, this.handleChangeLessonInput, grades, subjects)
+      <Fragment>
+      {renderLessonForm(this.handleEditLesson, this.state, this.handleChangeLessonInput, grades, subjects)}
+      <button>Cancel</button>
+      </Fragment>
     )
   }
 }
@@ -47,6 +51,12 @@ class EditLesson extends Component {
 const mapStateToProps = state => {
   return {
     pickedLesson: state.pickedLesson
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    hideEditLessonForm: () => dispatch(hideEditLessonForm())
   }
 }
 

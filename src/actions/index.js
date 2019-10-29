@@ -38,3 +38,9 @@ export const showEditLessonForm = () => {
     type: 'SHOW_EDIT_LESSON_FORM'
   }
 }
+
+export const hideEditLessonForm = () => {
+  return {
+    type: 'HIDE_EDIT_LESSON_FORM'
+  }
+}

@@ -20,6 +20,8 @@ export default function (state = defaultState, action) {
       return {...state, pickedLesson: action.payload}
     case 'SHOW_EDIT_LESSON_FORM':
       return {...state, editingLesson: true}
+    case 'HIDE_EDIT_LESSON_FORM':
+      return {...state, editingLesson: false}
     default:
       return state
   }
