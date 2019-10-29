@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
-import LessonsContainer from './LessonsContainer'
+import LessonsContainer from '../containers/LessonsContainer'
 import { setLessons } from '../actions'
 
 class AllLessons extends Component {
@@ -12,7 +12,6 @@ class AllLessons extends Component {
   }
 
   render() {
-    console.log(this.props.lessons)
     return (
       <LessonsContainer lessons={this.props.lessons} />
     )

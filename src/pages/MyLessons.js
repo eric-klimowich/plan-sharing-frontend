@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
-import LessonsContainer from './LessonsContainer'
+import LessonsContainer from '../containers/LessonsContainer'
 import { setMyLessons } from '../actions'
 
 class MyLessons extends Component {
