@@ -19,6 +19,13 @@ export const setLessons = lessons => {
   }
 }
 
+export const setMyLessons = lessons => {
+  return {
+    type: 'SET_MY_LESSONS',
+    payload: myLessons
+  }
+}
+
 export const addNewLesson = lesson => {
   return {
     type: 'ADD_NEW_LESSON',

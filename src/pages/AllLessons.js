@@ -12,7 +12,6 @@ class AllLessons extends Component {
   }
 
   render() {
-    console.log(this.props.lessons)
     return (
       <LessonsContainer lessons={this.props.lessons} />
     )
