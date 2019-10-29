@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Adapter from '../Adapter'
+import LessonsContainer from './LessonsContainer'
 
 class AllLessons extends Component {
 
@@ -17,7 +18,7 @@ class AllLessons extends Component {
   render() {
     console.log(this.state)
     return (
-      <div>In AllLessons</div>
+      <LessonsContainer lessons={this.state.lessons} />
     )
   }
 }
