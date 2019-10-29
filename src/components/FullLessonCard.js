@@ -1,13 +1,15 @@
 import React, { Component, Fragment } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
 import { API } from '../Adapter'
 import { setPickedLesson } from '../actions'
+import { showEditLessonForm } from '../actions'
 
 class FullLessonCard extends Component {
 
   handleEditLesson = (event) => {
-    this.props.history.push('/profile/edit-lesson')
+    this.props.showEditLessonForm()
   }
 
   handleDeleteLesson = (event) => {
@@ -21,6 +23,9 @@ class FullLessonCard extends Component {
 
   render() {
     console.log(this.props)
+    if (this.props.editingLesson) {
+      return <Redirect to="/profile/edit-lesson" />
+    }
     return (
       <Fragment>
         <h1>{this.props.pickedLesson.title}</h1>
@@ -43,13 +48,15 @@ class FullLessonCard extends Component {
 const mapStateToProps = state => {
   return {
     pickedLesson: state.pickedLesson,
-    history: state.history
+    history: state.history,
+    editingLesson: state.editingLesson
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setPickedLesson: (lesson) => dispatch(setPickedLesson(lesson))
+    setPickedLesson: (lesson) => dispatch(setPickedLesson(lesson)),
+    showEditLessonForm: () => dispatch(showEditLessonForm())
   }
 }
 

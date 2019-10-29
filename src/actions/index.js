@@ -32,3 +32,9 @@ export const setPickedLesson = lesson => {
     payload: lesson
   }
 }
+
+export const showEditLessonForm = () => {
+  return {
+    type: 'SHOW_EDIT_LESSON_FORM'
+  }
+}

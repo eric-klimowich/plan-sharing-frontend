@@ -2,7 +2,8 @@ const defaultState = {
   history: null,
   user: null,
   lessons: [],
-  pickedLesson: null
+  pickedLesson: null,
+  editingLesson: false
 }
 
 export default function (state = defaultState, action) {
@@ -17,6 +18,8 @@ export default function (state = defaultState, action) {
       return {...state, lessons: [...state.lessons, action.payload]}
     case 'SET_PICKED_LESSON':
       return {...state, pickedLesson: action.payload}
+    case 'SHOW_EDIT_LESSON_FORM':
+      return {...state, editingLesson: true}
     default:
       return state
   }
