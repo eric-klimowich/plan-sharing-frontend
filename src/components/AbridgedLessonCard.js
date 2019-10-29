@@ -4,7 +4,7 @@ import { setPickedLesson } from '../actions'
 
 class AbridgedLessonCard extends Component {
 
-  handleShowLesson = (event, lesson) => {
+  handleShowFullLessonCard = lesson => {
     this.props.setPickedLesson(lesson)
   }
 
@@ -14,15 +14,9 @@ class AbridgedLessonCard extends Component {
         <h1>{this.props.title}</h1>
         <p>Grade: {this.props.grade}</p>
         <p>Subject: {this.props.subject}</p>
-        <button onClick={(event) => this.handleShowLesson(event, this.props)}>Details</button>
+        <button onClick={() => this.handleShowFullLessonCard(this.props)}>Details</button>
       </Fragment>
     )
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    lessonToShow: state.lessonToShow
   }
 }
 
@@ -32,4 +26,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AbridgedLessonCard)
+export default connect(null, mapDispatchToProps)(AbridgedLessonCard)
