@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import Adapter from '../Adapter'
-
 import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
@@ -43,6 +42,9 @@ class EditLesson extends Component {
   render() {
     console.log(this.props)
     console.log(this.state)
+    if (!this.props.editingLesson) {
+      return <Redirect to="/lessons" />
+    }
     return (
       <Fragment>
       {renderLessonForm(this.handleEditLesson, this.state, this.handleChangeLessonInput, grades, subjects)}
