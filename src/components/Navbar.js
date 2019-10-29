@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
 import { setUser } from '../actions'
-import { renderLoggedInNav } from '../navs'
-import { renderLoggedOutNav } from '../navs'
+import { renderLoggedInNav, renderLoggedOutNav } from '../navs'
+
 class Navbar extends Component {
 
   handleLogout = () => {
@@ -24,7 +24,7 @@ class Navbar extends Component {
         {
           !!this.props.user ?
             renderLoggedInNav(this.handleLogout)
-            :
+              :
             renderLoggedOutNav()
         }
       </header>
@@ -34,7 +34,6 @@ class Navbar extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
     history: state.history
   }
 }
