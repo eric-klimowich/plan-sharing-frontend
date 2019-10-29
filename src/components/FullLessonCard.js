@@ -5,6 +5,7 @@ import Adapter from '../Adapter'
 import { API } from '../Adapter'
 import { setPickedLesson } from '../actions'
 import { showEditLessonForm } from '../actions'
+import { deleteLesson } from '../actions'
 
 class FullLessonCard extends Component {
 
@@ -15,7 +16,8 @@ class FullLessonCard extends Component {
   handleDeleteLesson = (event) => {
     event.preventDefault()
     Adapter.deleteLesson(this.props.pickedLesson.id)
-  }
+    this.props.deleteLesson(this.props.pickedLesson)
+    this.props.setPickedLesson(null)}
 
   handleBackToAllLessons = () => {
     this.props.setPickedLesson(null)
@@ -56,6 +58,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setPickedLesson: (lesson) => dispatch(setPickedLesson(lesson)),
+    deleteLesson: (lesson) => dispatch(deleteLesson(lesson)),
     showEditLessonForm: () => dispatch(showEditLessonForm())
   }
 }

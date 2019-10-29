@@ -26,6 +26,13 @@ export const addNewLesson = lesson => {
   }
 }
 
+export const deleteLesson = lesson => {
+  return {
+    type: 'DELETE_LESSON',
+    payload: lesson
+  }
+}
+
 export const setPickedLesson = lesson => {
   return {
     type: 'SET_PICKED_LESSON',
