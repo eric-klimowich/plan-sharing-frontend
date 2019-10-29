@@ -12,6 +12,11 @@ export const renderLoggedInNav = handleLogout => {
             </Link>
           </li>
           <li className="main-nav__item">
+            <Link to="/profile/my-lessons">
+              My Lessons
+            </Link>
+          </li>
+          <li className="main-nav__item">
             <Link to="/lessons">
               All Lessons
             </Link>
