@@ -36,13 +36,17 @@ class EditLesson extends Component {
     console.log(event.target)
   }
 
+  handleCancelEditLesson = (event) => {
+    this.props.hideEditLessonForm()
+  }
+
   render() {
     console.log(this.props)
     console.log(this.state)
     return (
       <Fragment>
       {renderLessonForm(this.handleEditLesson, this.state, this.handleChangeLessonInput, grades, subjects)}
-      <button>Cancel</button>
+      <button onClick={this.handleCancelEditLesson}>Cancel</button>
       </Fragment>
     )
   }
@@ -50,7 +54,8 @@ class EditLesson extends Component {
 
 const mapStateToProps = state => {
   return {
-    pickedLesson: state.pickedLesson
+    pickedLesson: state.pickedLesson,
+    editingLesson: state.editingLesson
   }
 }
 
@@ -60,4 +65,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps)(EditLesson)
+export default connect(mapStateToProps, mapDispatchToProps)(EditLesson)
