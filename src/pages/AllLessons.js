@@ -1,26 +1,34 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Adapter from '../Adapter'
 import LessonsContainer from './LessonsContainer'
+import { setLessons } from '../actions'
 
 class AllLessons extends Component {
 
-  state = {
-    lessons: []
-  }
-
   componentDidMount() {
     Adapter.getLessons()
-      .then(lessons => {
-        this.setState({ lessons })
-      })
+      .then(lessons => this.props.setLessons(lessons))
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.props.lessons)
     return (
-      <LessonsContainer lessons={this.state.lessons} />
+      <LessonsContainer lessons={this.props.lessons} />
     )
   }
 }
 
-export default AllLessons
+const mapStateToProps = state => {
+  return {
+    lessons: state.lessons
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setLessons: (lessons) => dispatch(setLessons(lessons))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllLessons)
