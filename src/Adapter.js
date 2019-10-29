@@ -78,6 +78,18 @@ export default class Adapter {
     .then(r => r.json())
   }
 
+  static getMyLessons() {
+    return fetch('http://localhost:3000/api/v1/my_lessons', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(r => r.json())
+  }
+
   static postNewLesson(file, lesson) {
     return fetch(`${API}/api/v1/lessons`, {
       method: 'POST',
