@@ -12,6 +12,14 @@ export default class Adapter {
     }
   }
 
+  static headersWithAuth() {
+    return {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+  }
+
   static getToken() {
     return localStorage.getItem('token')
   }
@@ -23,11 +31,7 @@ export default class Adapter {
   static getLoggedInUserToken() {
     return fetch(`${API}/api/v1/logged_in_user`, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
+      headers: this.headersWithAuth()
     })
     .then(r => {
       if (r.ok) {
@@ -81,11 +85,7 @@ export default class Adapter {
   static getMyLessons() {
     return fetch('http://localhost:3000/api/v1/my_lessons', {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
+      headers: this.headersWithAuth()
     })
     .then(r => r.json())
   }
@@ -93,11 +93,7 @@ export default class Adapter {
   static postNewLesson(file, lesson) {
     return fetch(`${API}/api/v1/lessons`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${this.getToken()}`
-      },
+      headers: this.headersWithAuth(),
       body: JSON.stringify({
         lesson: {
           title: lesson.title,
