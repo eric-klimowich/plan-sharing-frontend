@@ -19,7 +19,7 @@ export const setLessons = lessons => {
   }
 }
 
-export const setMyLessons = lessons => {
+export const setMyLessons = myLessons => {
   return {
     type: 'SET_MY_LESSONS',
     payload: myLessons
