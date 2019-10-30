@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import Adapter from '../Adapter'
-
 import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'

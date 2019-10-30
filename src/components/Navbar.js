@@ -25,7 +25,7 @@ class Navbar extends Component {
         {
           !!this.props.user ?
             renderLoggedInNav(this.handleLogout)
-              :
+          :
             renderLoggedOutNav()
         }
       </header>
