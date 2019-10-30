@@ -18,6 +18,19 @@ class EditLesson extends Component {
     fileName: ''
   }
 
+  setLocalState = () => {
+    this.setState({
+      title: this.props.pickedLesson.title,
+      description: this.props.pickedLesson.description,
+      grade: this.props.pickedLesson.grade,
+      subject: this.props.pickedLesson.subject
+    })
+  }
+
+  componentDidMount() {
+    this.setLocalState()
+  }
+
   handleChangeLessonInput = event => {
     if (event.target.files) {
       this.setState({
