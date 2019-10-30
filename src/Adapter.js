@@ -108,6 +108,40 @@ export default class Adapter {
     .then(r => r.json())
   }
 
+  static patchLessonWithFile(file, lesson) {
+    return fetch(`${API}/api/v1/lessons`, {
+      method: 'PATCH',
+      headers: this.headersWithAuth(),
+      body: JSON.stringify({
+        lesson: {
+          title: lesson.title,
+          description: lesson.description,
+          grade_name: lesson.grade,
+          subject_name: lesson.subject,
+          file: file,
+          file_name: lesson.fileName
+        }
+      })
+    })
+    .then(r => r.json())
+  }
+
+  static patchLessonWithoutFile(lesson) {
+    return fetch(`${API}/api/v1/lessons`, {
+      method: 'PATCH',
+      headers: this.headersWithAuth(),
+      body: JSON.stringify({
+        lesson: {
+          title: lesson.title,
+          description: lesson.description,
+          grade_name: lesson.grade,
+          subject_name: lesson.subject,
+        }
+      })
+    })
+    .then(r => r.json())
+  }
+
   static deleteLesson(id) {
     return fetch(`${API}/api/v1/lessons/${id}`, {
       method: 'DELETE'
