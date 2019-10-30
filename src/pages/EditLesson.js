@@ -54,8 +54,16 @@ class EditLesson extends Component {
     this.props.hideEditLessonForm()
   }
 
+  handleShowFileInputField = () => {
+    this.props.showReplaceFileField()
+  }
+
+  handleHideFileInputField = () => {
+    this.props.hideReplaceFileField()
+  }
+
   renderFileInputField = () => {
-    if (!this.props.replaceFile) {
+    if (this.props.replaceFile) {
       return (
         <Fragment>
           <input
@@ -65,14 +73,14 @@ class EditLesson extends Component {
             placeholder="add lesson plan file...."
             onChange={this.handleChangeLessonInput}
           />
-          <button type="button">Cancel</button>
+          <button type="button" onClick={this.handleHideFileInputField}>Cancel</button>
         </Fragment>
       )
     }
     return (
       <Fragment>
         <p>{this.props.pickedLesson.file_name}</p>
-        <button type="button">Replace Lesson Plan</button>
+        <button type="button" onClick={this.handleShowFileInputField}>Replace Lesson Plan</button>
       </Fragment>
     )
   }
