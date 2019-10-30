@@ -5,6 +5,8 @@ import Adapter from '../Adapter'
 import { renderLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
+import { showReplaceFileField } from '../actions'
+import { hideReplaceFileField } from '../actions'
 import { hideEditLessonForm } from '../actions'
 
 class EditLesson extends Component {
@@ -53,7 +55,7 @@ class EditLesson extends Component {
   }
 
   renderFileInputField = () => {
-    if () {
+    if (this.props.replaceFile) {
       return (
         <input
           className="add-lesson-form__input"
@@ -70,8 +72,8 @@ class EditLesson extends Component {
   }
 
   render() {
-    console.log(this.props)
-    console.log(this.state)
+    console.log(this.props.pickedLesson)
+    // console.log(this.state)
     if (!this.props.editingLesson) {
       return <Redirect to="/lessons" />
     }
@@ -122,7 +124,7 @@ class EditLesson extends Component {
                   )})
                 }
             </select>
-
+            {this.renderFileInputField()}
             <input
               type="submit"
               name="submit"
@@ -139,12 +141,15 @@ class EditLesson extends Component {
 const mapStateToProps = state => {
   return {
     pickedLesson: state.pickedLesson,
+    replaceFile: state.replaceFile,
     editingLesson: state.editingLesson
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
+    showReplaceFileField: () => dispatch(showReplaceFileField()),
+    hideReplaceFileField: () => dispatch(hideReplaceFileField()),
     hideEditLessonForm: () => dispatch(hideEditLessonForm())
   }
 }
