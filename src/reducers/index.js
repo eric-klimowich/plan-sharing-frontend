@@ -4,7 +4,8 @@ const defaultState = {
   lessons: [],
   myLessons: [],
   pickedLesson: null,
-  editingLesson: false
+  editingLesson: false,
+  replaceFile: false
 }
 
 export default function (state = defaultState, action) {
@@ -27,6 +28,10 @@ export default function (state = defaultState, action) {
       return {...state, editingLesson: true}
     case 'HIDE_EDIT_LESSON_FORM':
       return {...state, editingLesson: false}
+    case 'SHOW_REPLACE_FILE_FIELD':
+      return {...state, replaceFile: true}
+    case 'HIDE_REPLACE_FILE_FIELD':
+      return {...state, replaceFile: false}
     default:
       return state
   }

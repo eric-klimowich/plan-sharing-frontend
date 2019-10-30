@@ -58,3 +58,15 @@ export const hideEditLessonForm = () => {
     type: 'HIDE_EDIT_LESSON_FORM'
   }
 }
+
+export const showReplaceFileField = () => {
+  return {
+    type: 'SHOW_REPLACE_FILE_FIELD'
+  }
+}
+
+export const hideReplaceFileField = () => {
+  return {
+    type: 'HIDE_REPLACE_FILE_FIELD'
+  }
+}
