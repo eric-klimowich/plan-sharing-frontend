@@ -65,14 +65,14 @@ class EditLesson extends Component {
             placeholder="add lesson plan file...."
             onChange={this.handleChangeLessonInput}
           />
-          <button>Cancel</button>
+          <button type="button">Cancel</button>
         </Fragment>
       )
     }
     return (
       <Fragment>
         <p>{this.props.pickedLesson.file_name}</p>
-        <button>Replace Lesson Plan</button>
+        <button type="button">Replace Lesson Plan</button>
       </Fragment>
     )
   }
