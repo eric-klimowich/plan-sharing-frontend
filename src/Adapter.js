@@ -108,8 +108,8 @@ export default class Adapter {
     .then(r => r.json())
   }
 
-  static patchLessonWithFile(file, lesson) {
-    return fetch(`${API}/api/v1/lessons`, {
+  static patchLessonWithFile(file, lesson, id) {
+    return fetch(`${API}/api/v1/lessons/${id}`, {
       method: 'PATCH',
       headers: this.headersWithAuth(),
       body: JSON.stringify({
@@ -126,8 +126,8 @@ export default class Adapter {
     .then(r => r.json())
   }
 
-  static patchLessonWithoutFile(lesson) {
-    return fetch(`${API}/api/v1/lessons`, {
+  static patchLessonWithoutFile(lesson, id) {
+    return fetch(`${API}/api/v1/lessons/${id}`, {
       method: 'PATCH',
       headers: this.headersWithAuth(),
       body: JSON.stringify({
