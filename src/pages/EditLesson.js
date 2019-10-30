@@ -85,6 +85,57 @@ class EditLesson extends Component {
     )
   }
 
+  handleEditLessonWithFile = (file, lesson) => {
+    Adapter.postNewLesson(file, lesson)
+    this.props.history.push('/lessons')
+    this.setState({
+      title: '',
+      description: '',
+      grade: '',
+      subject: '',
+      file: '',
+      fileName: ''
+    })
+  }
+
+  handleEditLessonWithoutFile = (lesson) => {
+    Adapter.postNewLesson(lesson)
+    this.props.history.push('/lessons')
+    this.setState({
+      title: '',
+      description: '',
+      grade: '',
+      subject: '',
+      file: '',
+      fileName: ''
+    })
+  }
+
+  convertFileToBase64 = file => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = error => reject(error);
+    })
+  }
+
+  convertAndPassFileToSubmit = () => {
+    this.convertFileToBase64(this.state.file).then(data => this.handleSubmitLessonWithFile(data, this.state))
+  }
+
+  handleAddLesson = event => {
+    event.preventDefault()
+    if (this.state.file) {
+      this.setState({
+        fileName: this.state.file.name
+      }, () => this.convertAndPassFileToSubmit())
+    } else {
+      this.handleEditLessonWithoutFile(this.state)
+    }
+
+  }
+
   render() {
     console.log(this.props.pickedLesson)
     // console.log(this.state)
