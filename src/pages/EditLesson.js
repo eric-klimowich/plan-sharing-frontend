@@ -55,19 +55,25 @@ class EditLesson extends Component {
   }
 
   renderFileInputField = () => {
-    if (this.props.replaceFile) {
+    if (!this.props.replaceFile) {
       return (
-        <input
-          className="add-lesson-form__input"
-          type="file"
-          name="file"
-          placeholder="add lesson plan file...."
-          onChange={this.handleChangeLessonInput}
-        />
+        <Fragment>
+          <input
+            className="add-lesson-form__input"
+            type="file"
+            name="file"
+            placeholder="add lesson plan file...."
+            onChange={this.handleChangeLessonInput}
+          />
+          <button>Cancel</button>
+        </Fragment>
       )
     }
     return (
-      <p>{this.props.pickedLesson.file_name}</p>
+      <Fragment>
+        <p>{this.props.pickedLesson.file_name}</p>
+        <button>Replace Lesson Plan</button>
+      </Fragment>
     )
   }
 
