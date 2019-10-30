@@ -1,39 +1,15 @@
 import React, { Fragment, Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Profile extends Component {
 
-  renderProfile = () => {
+  render() {
     return (
-      <Fragment>
-        {this.props.user ? this.renderUserInfo() : this.renderErrorMessage()}
-      </Fragment>
-    )
-  }
-
-  renderErrorMessage = () => {
-    return (
-      <h1>{this.props.user.message}</h1>
-    )
-  }
-
-  renderUserInfo = () => {
-    return (
-      <Fragment>
       <div className="profile-container">
         <h1>{this.props.user.username}</h1>
         <p>{this.props.user.bio}</p>
       </div>
-      </Fragment>
-    )
-  }
-
-  render() {
-    console.log(this.props)
-    return (
-      <Fragment>
-        {this.props.user ? this.renderProfile() : <h1>Please Login</h1>}
-      </Fragment>
     )
   }
 }
