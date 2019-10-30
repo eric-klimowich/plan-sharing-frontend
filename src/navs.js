@@ -1,33 +1,33 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
-export const renderLoggedInNav = handleLogout => {
+export const renderLoggedInNav = (handleResetPickedLesson, handleLogout) => {
   return (
     <Fragment>
       <nav className="main-nav">
         <ul className="main-nav__items">
           <li className="main-nav__item">
-            <Link to="/profile">
+            <Link onClick={handleResetPickedLesson} to="/profile">
               Profile
             </Link>
           </li>
           <li className="main-nav__item">
-            <Link to="/profile/my-lessons">
+            <Link onClick={handleResetPickedLesson} to="/profile/my-lessons">
               My Lessons
             </Link>
           </li>
           <li className="main-nav__item">
-            <Link to="/lessons">
+            <Link onClick={handleResetPickedLesson} to="/lessons">
               All Lessons
             </Link>
           </li>
           <li className="main-nav__item">
-            <Link to="/profile/add-lesson">
+            <Link onClick={handleResetPickedLesson} to="/profile/add-lesson">
               Add Lesson
             </Link>
           </li>
           <li className="main-nav__item">
-            <Link to="/about">
+            <Link onClick={handleResetPickedLesson} to="/about">
               About
             </Link>
           </li>
@@ -42,28 +42,28 @@ export const renderLoggedInNav = handleLogout => {
   )
 }
 
-export const renderLoggedOutNav = () => {
+export const renderLoggedOutNav = handleResetPickedLesson => {
   return (
     <Fragment>
       <nav className="main-nav">
         <ul className="main-nav__items">
           <li className="main-nav__item">
-            <Link to="/lessons">
+            <Link onClick={handleResetPickedLesson} to="/lessons">
               All Lessons
             </Link>
           </li>
           <li className="main-nav__item">
-            <Link to="/about">
+            <Link onClick={handleResetPickedLesson} to="/about">
               About
             </Link>
           </li>
           <li className="main-nav__item">
-            <Link to="/login">
+            <Link onClick={handleResetPickedLesson} to="/login">
               Login
             </Link>
           </li>
           <li className="main-nav__item--cta">
-            <Link to="/signup">
+            <Link onClick={handleResetPickedLesson} to="/signup">
               Sign up
             </Link>
           </li>

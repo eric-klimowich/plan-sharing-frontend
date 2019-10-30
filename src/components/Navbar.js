@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
 import { setUser } from '../actions'
+import { setPickedLesson } from '../actions'
 import { renderLoggedInNav } from '../navs'
 import { renderLoggedOutNav } from '../navs'
 
@@ -12,6 +13,10 @@ class Navbar extends Component {
     Adapter.deleteToken()
     this.props.history.push("/login")
     this.props.setUser(null)
+  }
+
+  handleResetPickedLesson = () => {
+    this.props.setPickedLesson(null)
   }
 
   render() {
@@ -24,9 +29,9 @@ class Navbar extends Component {
         </div>
         {
           !!this.props.user ?
-            renderLoggedInNav(this.handleLogout)
+            renderLoggedInNav(this.handleResetPickedLesson, this.handleLogout)
           :
-            renderLoggedOutNav()
+            renderLoggedOutNav(this.handleResetPickedLesson)
         }
       </header>
     )
@@ -42,7 +47,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: (user) => dispatch(setUser(user))
+    setUser: (user) => dispatch(setUser(user)),
+    setPickedLesson: (user) => dispatch(setPickedLesson(user))
   }
 }
 
