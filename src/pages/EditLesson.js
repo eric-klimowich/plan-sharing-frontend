@@ -86,7 +86,7 @@ class EditLesson extends Component {
   }
 
   handleEditLessonWithFile = (file, lesson) => {
-    Adapter.postNewLesson(file, lesson)
+    Adapter.patchLesson(file, lesson)
     this.props.history.push('/lessons')
     this.setState({
       title: '',
@@ -99,7 +99,7 @@ class EditLesson extends Component {
   }
 
   handleEditLessonWithoutFile = (lesson) => {
-    Adapter.postNewLesson(lesson)
+    Adapter.patchLesson(lesson)
     this.props.history.push('/lessons')
     this.setState({
       title: '',
@@ -121,10 +121,10 @@ class EditLesson extends Component {
   }
 
   convertAndPassFileToSubmit = () => {
-    this.convertFileToBase64(this.state.file).then(data => this.handleSubmitLessonWithFile(data, this.state))
+    this.convertFileToBase64(this.state.file).then(data => this.handleEditLessonWithFile(data, this.state))
   }
 
-  handleAddLesson = event => {
+  handleEditLesson = event => {
     event.preventDefault()
     if (this.state.file) {
       this.setState({
