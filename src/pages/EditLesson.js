@@ -86,7 +86,7 @@ class EditLesson extends Component {
   }
 
   handleEditLessonWithFile = (file, lesson) => {
-    Adapter.patchLesson(file, lesson)
+    Adapter.patchLessonWithFile(file, lesson)
     this.props.history.push('/lessons')
     this.setState({
       title: '',
@@ -99,7 +99,7 @@ class EditLesson extends Component {
   }
 
   handleEditLessonWithoutFile = (lesson) => {
-    Adapter.patchLesson(lesson)
+    Adapter.patchLessonWithoutFile(lesson)
     this.props.history.push('/lessons')
     this.setState({
       title: '',
