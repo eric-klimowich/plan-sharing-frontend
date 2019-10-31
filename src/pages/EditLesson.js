@@ -32,19 +32,12 @@ class EditLesson extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/api/v1/send_lesson_data/${this.props.pickedLesson.id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      }
-    })
-    .then(r => r.json())
-    .then(file => {
-      this.setState({
-        fileData: file.file
+    Adapter.getFileData(this.props.pickedLesson.id)
+      .then(file => {
+        this.setState({
+          fileData: file.file
+        })
       })
-    })
     this.setLocalState()
   }
 

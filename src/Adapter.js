@@ -107,9 +107,9 @@ export default class Adapter {
     })
     .then(r => r.json())
   }
-  
-  static getFileData() {
-    fetch(`http://localhost:3000/api/v1/send_lesson_data/${this.props.pickedLesson.id}`, {
+
+  static getFileData(id) {
+    return fetch(`http://localhost:3000/api/v1/send_lesson_data/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

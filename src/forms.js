@@ -77,7 +77,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
   )
 }
 
-export const renderLessonForm = (handleAddLesson, state, handleChangeLessonInput, grades, subjects) => {
+export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonInput, grades, subjects) => {
   return (
     <div className="add-lesson">
       <h1 className="add-lesson__heading">Enter Lesson Info</h1>
@@ -138,5 +138,66 @@ export const renderLessonForm = (handleAddLesson, state, handleChangeLessonInput
         />
       </form>
     </div>
+  )
+}
+
+export const renderEditLessonForm = () => {
+  return (
+    <Fragment>
+      <div className="add-lesson">
+        <h1 className="add-lesson__heading">Enter Lesson Info</h1>
+        <form className="add-lesson-form" onSubmit={this.handleEditLesson}>
+          <input
+            className="add-lesson-form__input"
+            type="text"
+            name="title"
+            value={this.state.title}
+            placeholder="enter title..."
+            onChange={this.handleChangeLessonInput}
+          />
+          <input
+            className="add-lesson-form__input"
+            type="text"
+            name="description"
+            value={this.state.description}
+            placeholder="enter description..."
+            onChange={this.handleChangeLessonInput}
+          />
+          <select
+            className="add-lesson-form__input"
+            name="grade"
+            value={this.state.grade}
+            onChange={this.handleChangeLessonInput}
+          >
+            <option>Grade</option>
+              {grades.map(grade => {
+                return (
+                  <option key={grade} value={grade} >{grade}</option>
+                )})
+              }
+          </select>
+          <select
+            className="add-lesson-form__input"
+            name="subject"
+            value={this.state.subject}
+            onChange={this.handleChangeLessonInput}
+          >
+            <option>Subject</option>
+              {subjects.map(subject => {
+                return (
+                  <option key={subject} value={subject} >{subject}</option>
+                )})
+              }
+          </select>
+          {this.renderFileInputField()}
+          <input
+            type="submit"
+            name="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+      <button onClick={this.handleCancelEditLesson}>Cancel</button>
+    </Fragment>
   )
 }

@@ -68,7 +68,7 @@ class AddLesson extends Component {
 
   render() {
     return (
-      renderLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
+      renderAddLessonForm(this.handleAddLesson, this.state, this.handleChangeLessonInput, grades, subjects)
     )
   }
 }
