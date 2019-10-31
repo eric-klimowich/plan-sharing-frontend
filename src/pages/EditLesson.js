@@ -31,6 +31,15 @@ class EditLesson extends Component {
 
   componentDidMount() {
     this.setLocalState()
+    fetch(`http://localhost:3000/api/v1/send_lesson_data/${this.props.pickedLesson.id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    })
+    .then(r => r.json())
+    .then(console.log)
   }
 
   handleChangeLessonInput = event => {
