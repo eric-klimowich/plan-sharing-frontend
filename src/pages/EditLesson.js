@@ -17,6 +17,7 @@ class EditLesson extends Component {
     grade: '',
     subject: '',
     file: '',
+    fileData: '',
     fileName: ''
   }
 
@@ -41,7 +42,7 @@ class EditLesson extends Component {
     .then(r => r.json())
     .then(file => {
       this.setState({
-        file: file.file
+        fileData: file.file
       })
     })
     this.setLocalState()

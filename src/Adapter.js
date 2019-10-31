@@ -136,6 +136,8 @@ export default class Adapter {
           description: lesson.description,
           grade_name: lesson.grade,
           subject_name: lesson.subject,
+          file: lesson.fileData,
+          file_name: lesson.fileName
         }
       })
     })
