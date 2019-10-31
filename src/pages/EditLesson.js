@@ -25,12 +25,12 @@ class EditLesson extends Component {
       title: this.props.pickedLesson.title,
       description: this.props.pickedLesson.description,
       grade: this.props.pickedLesson.grade,
-      subject: this.props.pickedLesson.subject
+      subject: this.props.pickedLesson.subject,
+      fileName: this.props.pickedLesson.file_name
     })
   }
 
   componentDidMount() {
-    this.setLocalState()
     fetch(`http://localhost:3000/api/v1/send_lesson_data/${this.props.pickedLesson.id}`, {
       method: 'GET',
       headers: {
@@ -39,7 +39,12 @@ class EditLesson extends Component {
       }
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(file => {
+      this.setState({
+        file: file.file
+      })
+    })
+    this.setLocalState()
   }
 
   handleChangeLessonInput = event => {
@@ -147,7 +152,7 @@ class EditLesson extends Component {
 
   render() {
     console.log(this.props.pickedLesson)
-    // console.log(this.state)
+    console.log(this.state)
     if (!this.props.editingLesson) {
       return <Redirect to="/lessons" />
     }
