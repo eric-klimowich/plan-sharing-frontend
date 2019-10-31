@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 export const renderLoginForm = (handleLoginUser, state, handleChangeUserInput) => {
   return (
@@ -141,33 +141,33 @@ export const renderAddLessonForm = (handleAddLesson, state, handleChangeLessonIn
   )
 }
 
-export const renderEditLessonForm = () => {
+export const renderEditLessonForm = (handleEditLesson, state, handleChangeLessonInput, grades, subjects, renderFileInputField, handleCancelEditLesson) => {
   return (
     <Fragment>
       <div className="add-lesson">
         <h1 className="add-lesson__heading">Enter Lesson Info</h1>
-        <form className="add-lesson-form" onSubmit={this.handleEditLesson}>
+        <form className="add-lesson-form" onSubmit={handleEditLesson}>
           <input
             className="add-lesson-form__input"
             type="text"
             name="title"
-            value={this.state.title}
+            value={state.title}
             placeholder="enter title..."
-            onChange={this.handleChangeLessonInput}
+            onChange={handleChangeLessonInput}
           />
           <input
             className="add-lesson-form__input"
             type="text"
             name="description"
-            value={this.state.description}
+            value={state.description}
             placeholder="enter description..."
-            onChange={this.handleChangeLessonInput}
+            onChange={handleChangeLessonInput}
           />
           <select
             className="add-lesson-form__input"
             name="grade"
-            value={this.state.grade}
-            onChange={this.handleChangeLessonInput}
+            value={state.grade}
+            onChange={handleChangeLessonInput}
           >
             <option>Grade</option>
               {grades.map(grade => {
@@ -179,8 +179,8 @@ export const renderEditLessonForm = () => {
           <select
             className="add-lesson-form__input"
             name="subject"
-            value={this.state.subject}
-            onChange={this.handleChangeLessonInput}
+            value={state.subject}
+            onChange={handleChangeLessonInput}
           >
             <option>Subject</option>
               {subjects.map(subject => {
@@ -189,7 +189,7 @@ export const renderEditLessonForm = () => {
                 )})
               }
           </select>
-          {this.renderFileInputField()}
+          {renderFileInputField()}
           <input
             type="submit"
             name="submit"
@@ -197,7 +197,7 @@ export const renderEditLessonForm = () => {
           />
         </form>
       </div>
-      <button onClick={this.handleCancelEditLesson}>Cancel</button>
+      <button onClick={handleCancelEditLesson}>Cancel</button>
     </Fragment>
   )
 }

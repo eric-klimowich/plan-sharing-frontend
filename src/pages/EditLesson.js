@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
-import { renderLessonForm } from '../forms'
+import { renderEditLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
 import { showReplaceFileField } from '../actions'
@@ -141,7 +141,6 @@ class EditLesson extends Component {
     } else {
       this.handleEditLessonWithoutFile(this.state, this.props.pickedLesson.id)
     }
-
   }
 
   render() {
@@ -151,62 +150,7 @@ class EditLesson extends Component {
       return <Redirect to="/lessons" />
     }
     return (
-      <Fragment>
-        <div className="add-lesson">
-          <h1 className="add-lesson__heading">Enter Lesson Info</h1>
-          <form className="add-lesson-form" onSubmit={this.handleEditLesson}>
-            <input
-              className="add-lesson-form__input"
-              type="text"
-              name="title"
-              value={this.state.title}
-              placeholder="enter title..."
-              onChange={this.handleChangeLessonInput}
-            />
-            <input
-              className="add-lesson-form__input"
-              type="text"
-              name="description"
-              value={this.state.description}
-              placeholder="enter description..."
-              onChange={this.handleChangeLessonInput}
-            />
-            <select
-              className="add-lesson-form__input"
-              name="grade"
-              value={this.state.grade}
-              onChange={this.handleChangeLessonInput}
-            >
-              <option>Grade</option>
-                {grades.map(grade => {
-                  return (
-                    <option key={grade} value={grade} >{grade}</option>
-                  )})
-                }
-            </select>
-            <select
-              className="add-lesson-form__input"
-              name="subject"
-              value={this.state.subject}
-              onChange={this.handleChangeLessonInput}
-            >
-              <option>Subject</option>
-                {subjects.map(subject => {
-                  return (
-                    <option key={subject} value={subject} >{subject}</option>
-                  )})
-                }
-            </select>
-            {this.renderFileInputField()}
-            <input
-              type="submit"
-              name="submit"
-              value="Submit"
-            />
-          </form>
-        </div>
-        <button onClick={this.handleCancelEditLesson}>Cancel</button>
-      </Fragment>
+      renderEditLessonForm(this.handleEditLesson, this.state, this.handleChangeLessonInput, grades, subjects, this.renderFileInputField, this.handleCancelEditLesson)
     )
   }
 }

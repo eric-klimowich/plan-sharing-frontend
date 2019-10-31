@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
-import { renderLessonForm } from '../forms'
+import { renderAddLessonForm } from '../forms'
 import { grades } from '../constants'
 import { subjects } from '../constants'
 import { addNewLesson } from '../actions'
@@ -44,7 +44,6 @@ class AddLesson extends Component {
       fileName: ''
     })
   }
-
 
   convertFileToBase64 = file => {
     return new Promise((resolve, reject) => {
