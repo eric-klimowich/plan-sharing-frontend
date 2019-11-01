@@ -146,8 +146,6 @@ class EditLesson extends Component {
   }
 
   render() {
-    console.log(this.props.pickedLesson)
-    console.log(this.state)
     if (!this.props.editingLesson) {
       return <Redirect to="/lessons" />
     }

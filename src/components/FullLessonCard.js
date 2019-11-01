@@ -38,7 +38,7 @@ class FullLessonCard extends Component {
       return <Redirect to="/profile/edit-lesson" />
     }
     return (
-      <Fragment>
+      <div class="lesson-plan">
         <h1>{this.props.pickedLesson.title}</h1>
         <p>{this.props.pickedLesson.description}</p>
         <p>Grade: {this.props.pickedLesson.grade}</p>
@@ -50,7 +50,7 @@ class FullLessonCard extends Component {
         <br/>
         {this.props.pickedLesson.user_id === this.props.user.id ? this.renderEditAndDeleteButtons() : null}
         <button onClick={this.handleBackToAllLessons}>Back to All Lessons</button>
-      </Fragment>
+      </div>
     )
   }
 }
