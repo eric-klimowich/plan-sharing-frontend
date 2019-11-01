@@ -10,12 +10,12 @@ class AbridgedLessonCard extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className="short-lesson-plan">
         <h1>{this.props.title}</h1>
         <p>Grade: {this.props.grade}</p>
         <p>Subject: {this.props.subject}</p>
         <button onClick={() => this.handleShowFullLessonCard(this.props)}>Details</button>
-      </Fragment>
+      </div>
     )
   }
 }

@@ -38,7 +38,7 @@ class FullLessonCard extends Component {
       return <Redirect to="/profile/edit-lesson" />
     }
     return (
-      <div class="lesson-plan">
+      <div class="full-lesson-plan">
         <h1>{this.props.pickedLesson.title}</h1>
         <p>{this.props.pickedLesson.description}</p>
         <p>Grade: {this.props.pickedLesson.grade}</p>
