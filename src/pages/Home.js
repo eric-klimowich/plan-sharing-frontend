@@ -8,7 +8,7 @@ const Home = () => {
       <h1>Home</h1>
       <div>
         <ReturningUser />
-        <Link to="/signup">
+        <Link className="main-nav__item--cta" to="/signup">
           Sign up
         </Link>
       </div>

@@ -57,16 +57,6 @@ export const renderLoggedOutNav = handleResetPickedLesson => {
               About
             </Link>
           </li>
-          <li className="main-nav__item">
-            <Link onClick={handleResetPickedLesson} to="/login">
-              Login
-            </Link>
-          </li>
-          <li className="main-nav__item--cta">
-            <Link onClick={handleResetPickedLesson} to="/signup">
-              Sign up
-            </Link>
-          </li>
         </ul>
       </nav>
     </Fragment>
