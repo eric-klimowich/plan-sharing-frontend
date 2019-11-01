@@ -118,6 +118,14 @@ body {
   text-align: center;
 }
 
+.full-lesson-plan {
+  background: blue
+}
+
+.short-lesson-plan {
+  background: blue
+}
+
 .add-lesson {
   display: flex;
   align-items: center;
