@@ -40,7 +40,8 @@ class ReturningUser extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    history: state.history
   }
 }
 

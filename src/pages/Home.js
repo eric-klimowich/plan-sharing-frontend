@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home</h1>
-      <div>
+      <div className="login-container">
         <ReturningUser />
         <Link className="main-nav__item--cta" to="/signup">
           Sign up
