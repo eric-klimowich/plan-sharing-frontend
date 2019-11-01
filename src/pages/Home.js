@@ -1,8 +1,14 @@
 import React from 'react'
+import ReturningUser from './ReturningUser'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <h1>Home</h1>
+      <div>
+        <ReturningUser />
+      </div>
+    </div>
   )
 }
 
