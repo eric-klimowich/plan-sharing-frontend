@@ -6,7 +6,6 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
-import ReturningUser from './pages/ReturningUser'
 import NewUser from './pages/NewUser'
 import AllLessons from './pages/AllLessons'
 import Profile from './pages/Profile'

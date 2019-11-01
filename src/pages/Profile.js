@@ -1,5 +1,4 @@
-import React, { Fragment, Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Profile extends Component {
