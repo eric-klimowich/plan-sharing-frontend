@@ -19,14 +19,18 @@ class FullLessonCard extends Component {
     this.props.deleteLesson(this.props.pickedLesson)
     this.props.setPickedLesson(null)}
 
-    renderEditAndDeleteButtons = () => {
+  renderEditAndDeleteButtons = () => {
+    if (this.props.user && (this.props.pickedLesson.user_id === this.props.user.id)) {
       return (
         <Fragment>
           <button onClick={this.handleEditLesson}>Edit</button>
           <button onClick={this.handleDeleteLesson}>Delete</button>
         </Fragment>
       )
+    } else {
+      return null
     }
+  }
 
   handleBackToAllLessons = () => {
     this.props.setPickedLesson(null)
@@ -48,7 +52,7 @@ class FullLessonCard extends Component {
           {this.props.pickedLesson.file_name}
         </a>
         <br/>
-        {this.props.pickedLesson.user_id === this.props.user.id ? this.renderEditAndDeleteButtons() : null}
+        {this.renderEditAndDeleteButtons()}
         <button onClick={this.handleBackToAllLessons}>Back to All Lessons</button>
       </div>
     )
