@@ -69,6 +69,11 @@ body {
   border: none;
 }
 
+.home-page {
+  display: flex;
+  justify-content: space-between;
+}
+
 .login-container {
   display: flex;
   align-items: center;

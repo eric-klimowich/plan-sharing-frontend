@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 export const renderLoginForm = (handleLoginUser, state, handleChangeUserInput) => {
   return (
     <div className="login">
-      <h1 className="login__heading">Please enter to login</h1>
+      <h1 className="login__heading">Login</h1>
       <form className="login-form" onSubmit={(event) => handleLoginUser(event, state)}>
         <input
           className="login-form__input"

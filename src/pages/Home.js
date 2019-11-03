@@ -4,7 +4,7 @@ import ReturningUser from './ReturningUser'
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-page">
       <h1>Home</h1>
       <div className="login-container">
         <ReturningUser />
