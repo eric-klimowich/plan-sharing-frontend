@@ -124,7 +124,7 @@ body {
   text-align: center;
 }
 
-.full-lesson-plan {
+.short-lesson-plan {
   background: blue;
   text-align: center;
   padding: 2rem;
@@ -133,13 +133,13 @@ body {
   width: 11rem;
 }
 
-.short-lesson-plan {
+.full-lesson-plan {
   background: blue;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem;
   margin: 1rem;
   display: inline-block;
-  width: 11rem;
+  width: 40rem;
 }
 
 .add-lesson {
