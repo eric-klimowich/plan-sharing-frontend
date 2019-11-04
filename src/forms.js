@@ -34,7 +34,7 @@ export const renderLoginForm = (handleLoginUser, state, handleChangeUserInput) =
 export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserInput) => {
   return (
     <div className="new-user">
-      <h1 className="new-user__heading">Please enter to sign up</h1>
+      <h1 className="new-user__heading">Sign up</h1>
       <form className="new-user__form" onSubmit={(event) => handleSubmitNewUser(event, state)}>
         <input
           className="new-user__form-input"

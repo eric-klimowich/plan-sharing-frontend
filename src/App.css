@@ -88,6 +88,10 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  border: .2rem solid black;
+  width: 16rem;
 }
 
 .new-user__heading {
