@@ -39,7 +39,9 @@ class NewUser extends Component {
 
   render() {
     return (
-      renderNewUserForm(this.handleSubmitNewUser, this.state, this.handleChangeUserInput)
+      <div className="new-user-container">
+      {renderNewUserForm(this.handleSubmitNewUser, this.state, this.handleChangeUserInput)}
+      </div>
     )
   }
 }
