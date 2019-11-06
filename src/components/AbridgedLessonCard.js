@@ -11,9 +11,9 @@ class AbridgedLessonCard extends Component {
   render() {
     return (
       <div className="short-lesson-plan">
-        <h1>{this.props.title}</h1>
-        <p>Grade: {this.props.grade}</p>
-        <p>Subject: {this.props.subject}</p>
+        <h1 className="short-lesson-plan__title">{this.props.title}</h1>
+        <p className="short-lesson-plan__grade">Grade: {this.props.grade}</p>
+        <p className="short-lesson-plan__subject">Subject: {this.props.subject}</p>
         <button onClick={() => this.handleShowFullLessonCard(this.props)}>Details</button>
       </div>
     )

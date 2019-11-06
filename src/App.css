@@ -154,13 +154,24 @@ body {
 }
 
 .short-lesson-plan {
-  background: blue;
+  background: rgb(100, 171, 201);
   text-align: center;
   margin: 1rem;
   border-radius: 3rem;
   padding: 2rem;
   display: inline-block;
   width: 11rem;
+}
+
+.short-lesson-plan__title {
+}
+
+.short-lesson-plan__grade {
+  background: rgb(196, 205, 207);
+}
+
+.short-lesson-plan__subject {
+  background: rgb(196, 205, 207);
 }
 
 .full-lesson-plan {
