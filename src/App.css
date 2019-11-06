@@ -167,11 +167,16 @@ body {
 }
 
 .short-lesson-plan__grade {
-  background: rgb(196, 205, 207);
+  background: rgb(220, 231, 233);
+  color: rgb(77, 130, 153);
+  border-radius: 3rem;
+  width: 7rem;
 }
 
 .short-lesson-plan__subject {
-  background: rgb(196, 205, 207);
+  background: rgb(220, 231, 233);
+  color: rgb(77, 130, 153);
+  border-radius: 3rem;
 }
 
 .full-lesson-plan {
