@@ -156,8 +156,9 @@ body {
 .short-lesson-plan {
   background: blue;
   text-align: center;
-  padding: 2rem;
   margin: 1rem;
+  border-radius: 3rem;
+  padding: 2rem;
   display: inline-block;
   width: 11rem;
 }
