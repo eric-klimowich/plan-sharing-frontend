@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const AddComment = () => {
-  return (
-    <div>In AddComment</div>
-  )
+class AddComment extends Component {
+  render() {
+    return (
+      <form>
+        What did you think of this lesson? Leave a comment here:
+        <textarea
+          name="commentInput"
+        />
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+        />
+      </form>
+    )
+  }
 }
 
 export default AddComment
