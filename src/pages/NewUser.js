@@ -38,6 +38,7 @@ class NewUser extends Component {
   }
 
   render() {
+    console.log(this.props.history)
     return (
       <div className="new-user-container">
       {renderNewUserForm(this.handleSubmitNewUser, this.state, this.handleChangeUserInput)}

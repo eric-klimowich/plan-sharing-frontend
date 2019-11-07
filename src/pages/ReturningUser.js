@@ -17,7 +17,6 @@ class ReturningUser extends Component {
     .then(user => {
       this.props.setUser(user.user)
       localStorage.setItem('token', user.jwt)
-      this.props.history.push('/profile')
     })
     this.setState({
       username: '',
@@ -32,6 +31,7 @@ class ReturningUser extends Component {
   }
 
   render() {
+    console.log(this.props.history)
     return (
       renderLoginForm(this.handleLoginUser, this.state, this.handleChangeUserInput)
     )
@@ -40,8 +40,7 @@ class ReturningUser extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
-    history: state.history
+    user: state.user
   }
 }
 
