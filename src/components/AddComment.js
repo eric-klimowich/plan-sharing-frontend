@@ -6,6 +6,12 @@ class AddComment extends Component {
     commentInput: ''
   }
 
+  handleCommentInputChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -14,6 +20,7 @@ class AddComment extends Component {
         <textarea
           name="commentInput"
           value={this.state.commentInput}
+          onChange={this.handleCommentInputChange}
         />
         <input
           type="submit"
