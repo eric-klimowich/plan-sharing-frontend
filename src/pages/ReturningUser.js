@@ -31,7 +31,6 @@ class ReturningUser extends Component {
   }
 
   render() {
-    console.log(this.props.history)
     return (
       renderLoginForm(this.handleLoginUser, this.state, this.handleChangeUserInput)
     )

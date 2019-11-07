@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import Adapter from '../Adapter'
-
 import { setUser } from '../actions'
 import { renderNewUserForm } from '../forms'
-
 class NewUser extends Component {
 
   state = {
@@ -38,7 +35,6 @@ class NewUser extends Component {
   }
 
   render() {
-    console.log(this.props.history)
     return (
       <div className="new-user-container">
       {renderNewUserForm(this.handleSubmitNewUser, this.state, this.handleChangeUserInput)}
