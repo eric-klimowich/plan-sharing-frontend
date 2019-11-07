@@ -24,6 +24,7 @@ class LessonsContainer extends Component {
                 file_name={lesson.lesson_data.file_name}
                 user={lesson.lesson_data.user}
                 user_id={lesson.lesson_data.user_id}
+                comments={lesson.lesson_data.comments}
               />
             )
           })}

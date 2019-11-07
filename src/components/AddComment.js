@@ -12,13 +12,14 @@ class AddComment extends Component {
     })
   }
 
-  handleCommentSubmit = event => {
+  handleSubmitComment = event => {
     event.preventDefault()
     fetch('http://localhost:3000/api/v1/comments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json'
+        Accept: 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify({
         content: this.state.commentInput,
@@ -37,7 +38,7 @@ class AddComment extends Component {
     console.log(this.state)
     console.log(this.props)
     return (
-      <form>
+      <form onSubmit={this.handleSubmitComment}>
         What did you think of this lesson? Leave a comment here:
         <textarea
           name="commentInput"
