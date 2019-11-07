@@ -22,8 +22,8 @@ class AddComment extends Component {
       },
       body: JSON.stringify({
         content: this.state.commentInput,
-        user_id:
-        lesson_id: 
+        user_id: "",
+        lesson_id: ""
       })
     })
       .then(r => r.json())
@@ -35,6 +35,7 @@ class AddComment extends Component {
 
   render() {
     console.log(this.state)
+    console.log(this.props)
     return (
       <form>
         What did you think of this lesson? Leave a comment here:
