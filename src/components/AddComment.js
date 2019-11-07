@@ -22,8 +22,8 @@ class AddComment extends Component {
       },
       body: JSON.stringify({
         content: this.state.commentInput,
-        user_id: "",
-        lesson_id: ""
+        user_id: this.props.userId,
+        lesson_id: this.props.lessonId
       })
     })
       .then(r => r.json())
