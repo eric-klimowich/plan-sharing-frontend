@@ -11,8 +11,8 @@ class Navbar extends Component {
 
   handleLogout = () => {
     Adapter.deleteToken()
-    this.props.history.push("/login")
     this.props.setUser(null)
+    this.props.history.push("/")
   }
 
   handleResetPickedLesson = () => {
