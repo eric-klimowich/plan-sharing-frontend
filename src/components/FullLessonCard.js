@@ -6,6 +6,7 @@ import { API } from '../Adapter'
 import { setPickedLesson } from '../actions'
 import { showEditLessonForm } from '../actions'
 import { deleteLesson } from '../actions'
+import CommentsContainer from '../containers/CommentsContainer'
 
 class FullLessonCard extends Component {
 
@@ -54,6 +55,7 @@ class FullLessonCard extends Component {
         <br/>
         {this.renderEditAndDeleteButtons()}
         <button onClick={this.handleBackToAllLessons}>Back to All Lessons</button>
+        <CommentsContainer />
       </div>
     )
   }
