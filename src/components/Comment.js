@@ -2,7 +2,7 @@ import React from 'react'
 
 const Comment = props => {
   return (
-    <div>In Comment</div>
+    <p>{props.comment.content}</p>
   )
 }
 
