@@ -55,7 +55,7 @@ class FullLessonCard extends Component {
         <br/>
         {this.renderEditAndDeleteButtons()}
         <button onClick={this.handleBackToAllLessons}>Back to All Lessons</button>
-        <CommentsContainer />
+        <CommentsContainer comments={this.props.pickedLesson.comments}/>
       </div>
     )
   }

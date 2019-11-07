@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CommentsContainer = () => {
+const CommentsContainer = props => {
   return (
     <div>In CommentsContainer</div>
   )
