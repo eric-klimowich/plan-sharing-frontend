@@ -12,6 +12,27 @@ class AddComment extends Component {
     })
   }
 
+  handleCommentSubmit = event => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/v1/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        content: this.state.commentInput,
+        user_id:
+        lesson_id: 
+      })
+    })
+      .then(r => r.json())
+      .then(console.log)
+    this.setState({
+      commentInput: ''
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
