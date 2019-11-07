@@ -180,12 +180,12 @@ body {
 }
 
 .full-lesson-plan {
-  background: blue;
+  background: rgb(100, 171, 201);
   text-align: center;
-  padding: 4rem;
   margin: 1rem;
-  display: inline-block;
-  width: 40rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 30rem;
 }
 
 .add-lesson {
