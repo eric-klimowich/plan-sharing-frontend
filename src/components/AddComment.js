@@ -15,7 +15,7 @@ class AddComment extends Component {
 
   handleSubmitComment = event => {
     event.preventDefault()
-    Adapter.addComment()
+    Adapter.addComment(this.state.commentInput, this.props.userId, this.props.lessonId)
       .then(console.log)
     this.setState({
       commentInput: ''

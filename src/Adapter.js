@@ -161,7 +161,7 @@ export default class Adapter {
     })
   }
 
-  static addComment() {
+  static addComment(commentInput, userId, lessonId) {
     return fetch('http://localhost:3000/api/v1/comments', {
       method: 'POST',
       headers: {
@@ -170,9 +170,9 @@ export default class Adapter {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify({
-        content: this.state.commentInput,
-        user_id: this.props.userId,
-        lesson_id: this.props.lessonId
+        content: commentInput,
+        user_id: userId,
+        lesson_id: lessonId
       })
     })
     .then(r => r.json())
