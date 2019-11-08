@@ -161,4 +161,21 @@ export default class Adapter {
     })
   }
 
+  static addComment() {
+    return fetch('http://localhost:3000/api/v1/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({
+        content: this.state.commentInput,
+        user_id: this.props.userId,
+        lesson_id: this.props.lessonId
+      })
+    })
+    .then(r => r.json())
+  }
+
 }
