@@ -161,14 +161,10 @@ export default class Adapter {
     })
   }
 
-  static addComment(commentInput, userId, lessonId) {
+  static postComment(commentInput, userId, lessonId) {
     return fetch('http://localhost:3000/api/v1/comments', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
+      headers: this.headersWithAuth(),
       body: JSON.stringify({
         content: commentInput,
         user_id: userId,
