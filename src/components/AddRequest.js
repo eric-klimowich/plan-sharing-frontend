@@ -4,7 +4,7 @@ class AddRequest extends Component {
 
   state = {
     title: '',
-    description: ''
+    content: ''
   }
 
   handleRequestInputChange = (event) => {
@@ -30,8 +30,8 @@ class AddRequest extends Component {
           <input
             className="add-request-form__input"
             type="text"
-            name="description"
-            value={this.state.description}
+            name="content"
+            value={this.state.content}
             placeholder="enter description..."
             onChange={this.handleRequestInputChange}
           />
