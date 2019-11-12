@@ -25,7 +25,8 @@ class AddRequest extends Component {
       },
       body: JSON.stringify({
         title: this.state.title,
-        content: this.state.content
+        content: this.state.content,
+        user_id: this.props.user.id
       })
     })
     .then(r => r.json())
@@ -66,6 +67,12 @@ class AddRequest extends Component {
         </form>
       </div>
     )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
   }
 }
 
