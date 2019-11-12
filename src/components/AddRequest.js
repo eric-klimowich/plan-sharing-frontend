@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 class AddRequest extends Component {
+
+  state = {
+    title: 'title',
+    description: 'description'
+  }
+
   render() {
     return (
       <div className="add-request">
@@ -10,12 +16,14 @@ class AddRequest extends Component {
             className="add-request-form__input"
             type="text"
             name="title"
+            value={this.state.title}
             placeholder="enter title..."
           />
           <input
             className="add-request-form__input"
             type="text"
             name="description"
+            value={this.state.description}
             placeholder="enter description..."
           />
           <input
