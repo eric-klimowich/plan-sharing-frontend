@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class AddRequest extends Component {
 
@@ -68,4 +69,4 @@ class AddRequest extends Component {
   }
 }
 
-export default AddRequest
+export default connect(mapStateToProps)(AddRequest)
