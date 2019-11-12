@@ -12,6 +12,7 @@ import Profile from './pages/Profile'
 import MyLessons from './pages/MyLessons'
 import AddLesson from './pages/AddLesson'
 import EditLesson from './pages/EditLesson'
+import RequestsContainer from './containers/RequestsContainer'
 import Adapter from './Adapter'
 import { setUser } from './actions'
 import { setHistory } from './actions'
@@ -41,6 +42,7 @@ class App extends Component {
                 <Route path="/" exact component={Home} />
                 <Route path="/about" exact component={About} />
                 <Route path="/lessons" exact component={AllLessons} />
+                <Route path="/requests" exact component={RequestsContainer} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/profile/my-lessons" exact component={MyLessons} />
                 <Route path="/profile/add-lesson" exact component={AddLesson} />
@@ -52,6 +54,7 @@ class App extends Component {
                 <Route path="/about" exact component={About} />
                 <Route path="/signup" exact component={NewUser} />
                 <Route path="/lessons" exact component={AllLessons} />
+                <Route path="/requests" exact component={RequestsContainer} />
               </Fragment>
           }
         </BrowserRouter>

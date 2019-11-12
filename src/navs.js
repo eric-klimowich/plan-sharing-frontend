@@ -12,6 +12,11 @@ export const renderLoggedInNav = (handleResetPickedLesson, handleLogout) => {
             </Link>
           </li>
           <li className="main-nav__item">
+            <Link onClick={handleResetPickedLesson} to="/requests">
+              Requests
+            </Link>
+          </li>
+          <li className="main-nav__item">
             <Link onClick={handleResetPickedLesson} to="/profile/my-lessons">
               My Lessons
             </Link>
@@ -47,6 +52,11 @@ export const renderLoggedOutNav = handleResetPickedLesson => {
     <Fragment>
       <nav className="main-nav">
         <ul className="main-nav__items">
+        <li className="main-nav__item">
+          <Link onClick={handleResetPickedLesson} to="/requests">
+            Requests
+          </Link>
+        </li>
           <li className="main-nav__item">
             <Link onClick={handleResetPickedLesson} to="/lessons">
               All Lessons
