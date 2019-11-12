@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import AddRequest from '../components/AddRequest'
 
 const RequestsContainer = () => {
   return (
-    <div>In RequestsContainer</div>
+    <Fragment>
+      <div>In RequestsContainer</div>
+      <AddRequest />
+    </Fragment>
   )
 }
 
