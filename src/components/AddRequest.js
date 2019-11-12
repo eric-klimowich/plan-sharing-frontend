@@ -13,6 +13,28 @@ class AddRequest extends Component {
     })
   }
 
+  handleSubmitRequest = event => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/v1/requests', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({
+        title: this.state.title,
+        content: this.state.content
+      })
+    })
+    .then(r => r.json())
+      .then(console.log)
+    this.setState({
+      title: '',
+      content: ''
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
