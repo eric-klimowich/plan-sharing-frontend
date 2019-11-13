@@ -182,4 +182,17 @@ export default class Adapter {
     .then(r => r.json())
   }
 
+  static postRequest(request, userId) {
+    return fetch('http://localhost:3000/api/v1/requests', {
+      method: 'POST',
+      headers: this.headersWithAuth(),
+      body: JSON.stringify({
+        title: request.title,
+        content: request.content,
+        user_id: userId
+      })
+    })
+    .then(r => r.json())
+  }
+
 }
