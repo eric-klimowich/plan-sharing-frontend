@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const Request = () => {
+const Request = props => {
   return (
-    <div>In Request</div>
+    <Fragment>
+      <h1>{props.request.title}</h1>
+      <p>{props.request.content}</p>
+    </Fragment>
   )
 }
 

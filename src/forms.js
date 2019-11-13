@@ -201,3 +201,34 @@ export const renderEditLessonForm = (handleEditLesson, state, handleChangeLesson
     </Fragment>
   )
 }
+
+export const renderAddRequestForm = (handleSubmitRequest, handleRequestInputChange, state) => {
+  return (
+    <div className="add-request">
+      <h1 className="add-request__heading">Enter Request</h1>
+      <form className="add-request-form" onSubmit={handleSubmitRequest}>
+        <input
+          className="add-request-form__input"
+          type="text"
+          name="title"
+          value={state.title}
+          placeholder="enter title..."
+          onChange={handleRequestInputChange}
+        />
+        <input
+          className="add-request-form__input"
+          type="text"
+          name="content"
+          value={state.content}
+          placeholder="enter description..."
+          onChange={handleRequestInputChange}
+        />
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  )
+}

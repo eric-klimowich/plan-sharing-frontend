@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Adapter from '../Adapter'
+import { renderAddRequestForm } from '../forms'
 
 class AddRequest extends Component {
 
@@ -26,34 +27,8 @@ class AddRequest extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
-      <div className="add-request">
-        <h1 className="add-request__heading">Enter Request</h1>
-        <form className="add-request-form" onSubmit={this.handleSubmitRequest}>
-          <input
-            className="add-request-form__input"
-            type="text"
-            name="title"
-            value={this.state.title}
-            placeholder="enter title..."
-            onChange={this.handleRequestInputChange}
-          />
-          <input
-            className="add-request-form__input"
-            type="text"
-            name="content"
-            value={this.state.content}
-            placeholder="enter description..."
-            onChange={this.handleRequestInputChange}
-          />
-          <input
-            type="submit"
-            name="submit"
-            value="Submit"
-          />
-        </form>
-      </div>
+      renderAddRequestForm(this.handleSubmitRequest, this.handleRequestInputChange, this.state)
     )
   }
 }
