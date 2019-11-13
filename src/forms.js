@@ -233,7 +233,7 @@ export const renderAddRequestForm = (handleSubmitRequest, handleRequestInputChan
           placeholder="enter title..."
           onChange={handleRequestInputChange}
         />
-        <input
+        <textarea
           className="add-request-form__input"
           type="text"
           name="content"
