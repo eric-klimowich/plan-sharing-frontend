@@ -208,3 +208,28 @@ body {
 .add-lesson-form__input {
   margin: 0.4rem 0;
 }
+
+.add-request {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  border: .2rem solid black;
+  width: 16rem;
+}
+
+.add-request__heading {
+  display: flex;
+  align-items: center;
+}
+
+.add-request-form {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-request-form__input {
+  margin: 0.4rem 0;
+}
