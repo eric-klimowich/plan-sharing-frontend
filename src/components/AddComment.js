@@ -24,8 +24,6 @@ class AddComment extends Component {
   }
 
   render() {
-    console.log(this.state)
-    console.log(this.props)
     return (
       renderAddCommentForm(this.handleSubmitComment, this.state, this.handleCommentInputChange)
     )

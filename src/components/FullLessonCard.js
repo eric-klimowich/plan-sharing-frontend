@@ -39,7 +39,6 @@ class FullLessonCard extends Component {
   }
 
   render() {
-    console.log(this.props)
     if (this.props.editingLesson) {
       return <Redirect to="/profile/edit-lesson" />
     }
