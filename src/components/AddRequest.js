@@ -42,7 +42,7 @@ class AddRequest extends Component {
     return (
       <div className="add-request">
         <h1 className="add-request__heading">Enter Request</h1>
-        <form className="add-request-form">
+        <form className="add-request-form" onSubmit={this.handleSubmitRequest}>
           <input
             className="add-request-form__input"
             type="text"
