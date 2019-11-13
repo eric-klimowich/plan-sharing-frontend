@@ -174,4 +174,12 @@ export default class Adapter {
     .then(r => r.json())
   }
 
+  static getRequests() {
+    return fetch('http://localhost:3000/api/v1/requests', {
+      method: 'GET',
+      headers: this.headers()
+    })
+    .then(r => r.json())
+  }
+
 }
