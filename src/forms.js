@@ -202,6 +202,24 @@ export const renderEditLessonForm = (handleEditLesson, state, handleChangeLesson
   )
 }
 
+export const renderAddCommentForm = (handleSubmitComment, state, handleCommentInputChange) => {
+  return (
+    <form onSubmit={handleSubmitComment}>
+      What did you think of this lesson? Leave a comment here:
+      <textarea
+        name="commentInput"
+        value={state.commentInput}
+        onChange={handleCommentInputChange}
+      />
+      <input
+        type="submit"
+        name="submit"
+        value="Submit"
+      />
+    </form>
+  )
+}
+
 export const renderAddRequestForm = (handleSubmitRequest, handleRequestInputChange, state) => {
   return (
     <div className="add-request">

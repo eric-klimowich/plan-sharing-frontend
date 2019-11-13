@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Adapter from '../Adapter'
+import { renderAddCommentForm } from '../forms'
 
 class AddComment extends Component {
 
@@ -26,19 +27,7 @@ class AddComment extends Component {
     console.log(this.state)
     console.log(this.props)
     return (
-      <form onSubmit={this.handleSubmitComment}>
-        What did you think of this lesson? Leave a comment here:
-        <textarea
-          name="commentInput"
-          value={this.state.commentInput}
-          onChange={this.handleCommentInputChange}
-        />
-        <input
-          type="submit"
-          name="submit"
-          value="Submit"
-        />
-      </form>
+      renderAddCommentForm(this.handleSubmitComment, this.state, this.handleCommentInputChange)
     )
   }
 }
