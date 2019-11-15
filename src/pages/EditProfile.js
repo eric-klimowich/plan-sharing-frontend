@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const EditProfile = () => {
   return (
-    <div>In EditProfile</div>
+    <Fragment>
+      <div>In EditProfile</div>
+      <button>Back to Profile</button>
+    </Fragment>
   )
 }
 
