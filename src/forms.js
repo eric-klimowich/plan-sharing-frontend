@@ -64,7 +64,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
           type="text"
           name="avatar"
           value={state.country}
-          placeholder="enter avatar..."
+          placeholder="enter country..."
           onChange={handleChangeUserInput}
         />
         <input
@@ -72,7 +72,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
           type="text"
           name="avatar"
           value={state.state}
-          placeholder="enter avatar..."
+          placeholder="enter state..."
           onChange={handleChangeUserInput}
         />
         <input
@@ -80,7 +80,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
           type="text"
           name="avatar"
           value={state.city}
-          placeholder="enter avatar..."
+          placeholder="enter city..."
           onChange={handleChangeUserInput}
         />
         <input
@@ -88,7 +88,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
           type="text"
           name="avatar"
           value={state.school}
-          placeholder="enter avatar..."
+          placeholder="enter school..."
           onChange={handleChangeUserInput}
         />
         <input
