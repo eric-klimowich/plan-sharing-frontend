@@ -45,7 +45,7 @@ class App extends Component {
                 <Route path="/lessons" exact component={AllLessons} />
                 <Route path="/requests" exact component={RequestsContainer} />
                 <Route path="/profile" exact component={Profile} />
-                <Route path="/profile/edit-profile" exact component={EditProfile} />
+                <Route path="/profile/edit" exact component={EditProfile} />
                 <Route path="/profile/my-lessons" exact component={MyLessons} />
                 <Route path="/profile/add-lesson" exact component={AddLesson} />
                 <Route path="/profile/edit-lesson" exact component={EditLesson} />

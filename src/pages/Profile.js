@@ -1,9 +1,13 @@
 import React, { Component, Fragment } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Profile extends Component {
 
   render() {
+    if (!!this.props.editProfile) {
+      return <Redirect to="/profile/edit" />
+    }
     return (
       <Fragment>
         <div className="profile-container">
@@ -18,7 +22,8 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-  user: state.user
+  user: state.user,
+  editProfile: state.editProfile
   }
 }
 
