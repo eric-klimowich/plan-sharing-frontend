@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { showEditProfileForm } from '../actions'
 
 class Profile extends Component {
 
@@ -24,6 +25,12 @@ const mapStateToProps = state => {
   return {
   user: state.user,
   editProfile: state.editProfile
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    showEditProfileForm: () => dispatch(showEditProfileForm())
   }
 }
 
