@@ -47,6 +47,18 @@ export const setPickedLesson = lesson => {
   }
 }
 
+export const showEditProfileForm = () => {
+  return {
+    type: 'SHOW_EDIT_PROFILE_FORM'
+  }
+}
+
+export const hideEditProfileForm = () => {
+  return {
+    type: 'HIDE_EDIT_PROFILE_FORM'
+  }
+}
+
 export const showEditLessonForm = () => {
   return {
     type: 'SHOW_EDIT_LESSON_FORM'

@@ -3,6 +3,7 @@ const defaultState = {
   user: null,
   lessons: [],
   myLessons: [],
+  editProfile: false,
   pickedLesson: null,
   editingLesson: false,
   replaceFile: false
@@ -24,6 +25,10 @@ export default function (state = defaultState, action) {
       return {...state, pickedLesson: action.payload}
     case 'DELETE_LESSON':
       return {...state, lessons: [...state.lessons.filter(lesson => lesson.lesson_data.id !== action.payload.id)]}
+    case 'SHOW_EDIT_PROFILE_FORM':
+      return {...state, editProfile: true}
+    case 'HIDE_EDIT_PROFILE_FORM':
+      return {...state, editProfile: false}
     case 'SHOW_EDIT_LESSON_FORM':
       return {...state, editingLesson: true}
     case 'HIDE_EDIT_LESSON_FORM':
