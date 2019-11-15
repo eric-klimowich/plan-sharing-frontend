@@ -5,6 +5,10 @@ import { showEditProfileForm } from '../actions'
 
 class Profile extends Component {
 
+  handleShowEditProfileForm = () => {
+    this.props.showEditProfileForm()
+  }
+
   render() {
     if (!!this.props.editProfile) {
       return <Redirect to="/profile/edit" />
@@ -15,7 +19,7 @@ class Profile extends Component {
           <h1>{this.props.user.username}</h1>
           <p>{this.props.user.bio}</p>
         </div>
-        <button>Edit Profile</button>
+        <button onClick={this.handleShowEditProfileForm}>Edit Profile</button>
       </Fragment>
     )
   }
@@ -34,4 +38,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)
