@@ -63,7 +63,31 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
           className="new-user__form-input"
           type="text"
           name="avatar"
-          value={state.avatar}
+          value={state.country}
+          placeholder="enter avatar..."
+          onChange={handleChangeUserInput}
+        />
+        <input
+          className="new-user__form-input"
+          type="text"
+          name="avatar"
+          value={state.state}
+          placeholder="enter avatar..."
+          onChange={handleChangeUserInput}
+        />
+        <input
+          className="new-user__form-input"
+          type="text"
+          name="avatar"
+          value={state.city}
+          placeholder="enter avatar..."
+          onChange={handleChangeUserInput}
+        />
+        <input
+          className="new-user__form-input"
+          type="text"
+          name="avatar"
+          value={state.school}
           placeholder="enter avatar..."
           onChange={handleChangeUserInput}
         />

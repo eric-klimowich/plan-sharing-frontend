@@ -9,7 +9,10 @@ class NewUser extends Component {
     username: '',
     password: '',
     bio: '',
-    avatar: ''
+    country: '',
+    state: '',
+    city: '',
+    school: ''
   }
 
   handleChangeUserInput = event => {
@@ -30,7 +33,10 @@ class NewUser extends Component {
         username: '',
         password: '',
         bio: '',
-        avatar: ''
+        country: '',
+        state: '',
+        city: '',
+        school: ''
       })
   }
 
