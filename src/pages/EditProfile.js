@@ -1,10 +1,21 @@
 import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { renderNewUserForm } from '../forms'
 import { hideEditProfileForm } from '../actions'
 
 
 class EditProfile extends Component {
+
+  state = {
+    username: '',
+    password: '',
+    bio: '',
+    country: '',
+    state: '',
+    city: '',
+    school: ''
+  }
 
   handleHideEditProfileForm = () => {
     this.props.hideEditProfileForm()
@@ -16,7 +27,7 @@ class EditProfile extends Component {
     }
     return (
       <Fragment>
-        <div>In EditProfile</div>
+        {renderNewUserForm()}
         <button onClick={this.handleHideEditProfileForm}>Back to Profile</button>
       </Fragment>
     )
