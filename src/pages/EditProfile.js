@@ -36,6 +36,12 @@ class EditProfile extends Component {
     this.props.hideEditProfileForm()
   }
 
+  handleChangeUserInput = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render() {
     console.log(this.state)
     if (!this.props.editProfile) {
@@ -43,7 +49,7 @@ class EditProfile extends Component {
     }
     return (
       <Fragment>
-        {renderNewUserForm()}
+        {renderNewUserForm(this.state, this.handleChangeUserInput)}
         <button onClick={this.handleHideEditProfileForm}>Back to Profile</button>
       </Fragment>
     )
