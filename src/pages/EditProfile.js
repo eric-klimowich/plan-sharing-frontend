@@ -17,11 +17,27 @@ class EditProfile extends Component {
     school: ''
   }
 
+  setLocalState = () => {
+    this.setState({
+      username: this.props.user.username,
+      bio: this.props.user.grbioade,
+      country: this.props.user.country,
+      state: this.props.user.state,
+      city: this.props.user.city,
+      school: this.props.user.school
+    })
+  }
+
+  componentDidMount() {
+    this.setLocalState()
+  }
+
   handleHideEditProfileForm = () => {
     this.props.hideEditProfileForm()
   }
 
   render() {
+    console.log(this.state)
     if (!this.props.editProfile) {
       return <Redirect to="/profile" />
     }
@@ -36,7 +52,8 @@ class EditProfile extends Component {
 
 const mapStateToProps = state => {
   return {
-  editProfile: state.editProfile
+    user: state.user,
+    editProfile: state.editProfile
   }
 }
 
