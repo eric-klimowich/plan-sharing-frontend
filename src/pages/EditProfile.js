@@ -20,7 +20,7 @@ class EditProfile extends Component {
   setLocalState = () => {
     this.setState({
       username: this.props.user.username,
-      bio: this.props.user.grbioade,
+      bio: this.props.user.bio,
       country: this.props.user.country,
       state: this.props.user.state,
       city: this.props.user.city,
@@ -49,7 +49,7 @@ class EditProfile extends Component {
     }
     return (
       <Fragment>
-        {renderNewUserForm(this.state, this.handleChangeUserInput)}
+        {renderNewUserForm(null, this.state, this.handleChangeUserInput)}
         <button onClick={this.handleHideEditProfileForm}>Back to Profile</button>
       </Fragment>
     )
