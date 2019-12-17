@@ -42,6 +42,11 @@ class EditProfile extends Component {
     })
   }
 
+  handleEditProfile = event => {
+    event.preventDefault()
+    console.log('clicked')
+  }
+
   render() {
     console.log(this.state)
     if (!this.props.editProfile) {
@@ -49,7 +54,7 @@ class EditProfile extends Component {
     }
     return (
       <Fragment>
-        {renderNewUserForm(null, this.state, this.handleChangeUserInput)}
+        {renderNewUserForm(this.handleEditProfile, this.state, this.handleChangeUserInput)}
         <button onClick={this.handleHideEditProfileForm}>Back to Profile</button>
       </Fragment>
     )
