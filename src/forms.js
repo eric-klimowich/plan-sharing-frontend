@@ -62,7 +62,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
         <input
           className="new-user__form-input"
           type="text"
-          name="avatar"
+          name="country"
           value={state.country}
           placeholder="enter country..."
           onChange={handleChangeUserInput}
@@ -70,7 +70,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
         <input
           className="new-user__form-input"
           type="text"
-          name="avatar"
+          name="usState"
           value={state.usState}
           placeholder="enter state..."
           onChange={handleChangeUserInput}
@@ -78,7 +78,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
         <input
           className="new-user__form-input"
           type="text"
-          name="avatar"
+          name="city"
           value={state.city}
           placeholder="enter city..."
           onChange={handleChangeUserInput}
@@ -86,7 +86,7 @@ export const renderNewUserForm = (handleSubmitNewUser, state, handleChangeUserIn
         <input
           className="new-user__form-input"
           type="text"
-          name="avatar"
+          name="school"
           value={state.school}
           placeholder="enter school..."
           onChange={handleChangeUserInput}
