@@ -34,7 +34,7 @@ class NewUser extends Component {
         password: '',
         bio: '',
         country: '',
-        state: '',
+        usState: '',
         city: '',
         school: ''
       })

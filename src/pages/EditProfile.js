@@ -12,7 +12,7 @@ class EditProfile extends Component {
     password: '',
     bio: '',
     country: '',
-    state: '',
+    usState: '',
     city: '',
     school: ''
   }
@@ -22,7 +22,7 @@ class EditProfile extends Component {
       username: this.props.user.username,
       bio: this.props.user.bio,
       country: this.props.user.country,
-      state: this.props.user.state,
+      usState: this.props.user.usState,
       city: this.props.user.city,
       school: this.props.user.school
     })
